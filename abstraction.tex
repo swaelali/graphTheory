@@ -452,7 +452,153 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 		\end{tikzpicture}
  	\caption{(iv) Complement of cycle graph $C_4$}
 	\end{figure}
+	\newpage
+\item[(3c)] {\color{blue}Draw the graphs $K_{2,2,2}$, and $K_{3,3,2}$, and write down the number of edges of $K_{3,4,5}$}.
+\hsplit
+The graphs $K_{2,2,2}$ and $K_{3,3,2}$ are shown in the following figures, respectively.\\
+For the graph $K_{3,4,5}$, there is 47 edges. 
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}[scale=0.6,-,auto,node distance=2cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+			\node[state]  (A) {};
+			\node[state]  (B) [right of=A]{};
+			\node[state]  (1) [below left of=A]{};		
+		 	\node[state]  (2) [below of=1]{};
+		 	\node[state] (C) [below  right of=B]{};
+		 	\node[state] (D) [below of=C]{};
+			
+				\foreach \i in {A,...,D}{
+		 		 \foreach \j in {1,...,2}{
+		 			\draw  (\i) -- (\j);
+		 			}
+		 			}
+		 		\foreach \i in {A,...,B}{
+		 		 \foreach \j in {C,...,D}{
+		 			\draw  (\i) -- (\j);
+		 			}
+		 			}
+ 	\end{tikzpicture}
+ 	\caption{$K_{2,2,2}$}
+\end{figure}
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}[scale=0.6,-,auto,node distance=2cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=5pt]
+			\node[state]  (A) {};
+			\node[state]  (B) [right of=A]{};			
+			\node[state]  (1) [below left of=A]{};		
+		 	\node[state]  (2) [below of=1]{};
+		 	\node[state] (3) [below of=2] {};
+		 	\node[state] (C) [below  right of=B]{};
+		 	\node[state] (D) [below of=C]{};
+		 	\node[state] (E) [below of=D]{};
+			
+				\foreach \i in {A,...,E}{
+		 		 \foreach \j in {1,...,3}{
+		 			\draw  (\i) -- (\j);
+		 			}
+		 			}
+		 		\foreach \i in {A,...,B}{
+		 		 \foreach \j in {C,...,E}{
+		 			\draw  (\i) -- (\j);
+		 			}
+		 			}
+ 	\end{tikzpicture}
+ 	\caption{$K_{3,3,2}$}
+\end{figure}
+\item[(3g)] {\color{blue} A simple graph that is isomorphic to its complement is self-complementary.
+	\begin{itemize}
+		\item[(i)] Prove that, if $G$ is self-complementary, then $G$ has $4k$ or $4k+1$ vertices, where $k$ is an integer,
+		\item[(ii)] Find all self-complementary graphs with 4 and 5 vertices,
+		\item[(iii)] Find a self-complementary graph with 8 vertices.
+	\end{itemize}}
+	\hsplit
+	\begin{itemize}
+		\item[(i)] \underline{Proof}\\
+			If $G$ is a self-complementary with $n$ vertices, and $$ G \cup \overline{G} =  K_n.$$ But we know that, the total number of edge in the complete graph $K_n$ i.e. $|E(K_n)| $is $n(n-1)/2$, that is, $$|E(G)| =  |E(\overline{G})| = \frac{n(n-1)}{4}.$$ In other words, $n$ or $n-1$ must be divisible by 4, that is, when $n$ is $4k$ or $4k+1$.
+			\item[]
+			\begin{figure}[h!]
+			\centering
+				\begin{tikzpicture}[scale=0.4,-,auto,node distance=1.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=5pt]
+						\node[state]  (A) {};
+						\node[state] (B) [below of=A]{};
+						\node[state] (C) [right of=B]{};
+						\node[state] (D) [above of=C]{};
+						
+						\path
+							(A) edge (B)
+							(B) edge (C)
+							(C) edge (D);
+			
+ 				\end{tikzpicture}
+ 				\begin{tikzpicture}[scale=0.4,-,auto,node distance=1.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=5pt]
+						\node[state]  (A) {};
+						\node[state] (B) [below left of=A]{};
+						\node[state] (C) [below right of=A]{};
+						\node[state] (D) [below of=B]{};
+						\node[state] (E) [below of=C]{};
+						
+						\path
+							(A) edge (B)
+							(A) edge (C)
+							(B) edge (D)
+							(C) edge (E)
+							(D) edge (E);
+			
+ 				\end{tikzpicture}
+ 				\begin{tikzpicture}[scale=0.4,-,auto,node distance=1.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=5pt]
+						\node[state]  (A) {};
+						\node[state] (B) [below left of=A]{};
+						\node[state] (C) [below right of=A]{};
+						\node[state] (D) [below of=B]{};
+						\node[state] (E) [below of=C]{};
+						
+						\path
+							(A) edge (B)
+							(A) edge (C)
+							(B) edge (D)
+							(C) edge (E)
+							(B) edge (C);
+			
+ 				\end{tikzpicture}
+				\caption{(ii) 4 and 5 vertices self-complementary graphs}
+			\end{figure}
+			\begin{figure}[h!]
+			\centering
+\begin{tikzpicture}[scale=.8,-,>=stealth',shorten >=1pt,auto,node distance=1.2cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 					 \node[state] 			(A)                    		{};
+ 					 \node[state] 			(B) [right of=A]                   		{};
+ 					 \node[state] 			(C) [below of=B]                   		{};
+ 					 \node[state] 			(D) [below of=A]                  		{};
+ 					 \node[state]          (E) [above left of=A] {};
+ 					 \node[state]          (F) [above right of=B] {};
+ 					 \node[state]          (G) [below right of=C] {};
+ 					 \node[state]          (H) [below left of=D] {};
+				\path
+				(A) edge (B)
+				(B) edge (C)
+				(C) edge (D)
+				(D) edge (A)
+				(E) edge (F)
+				(F) edge (G)
+				(G) edge (H)
+				(H) edge (E)
+				(A) edge (E)
+				(B) edge (F)
+				(C) edge (G)
+				(D) edge (H)
+				(G) edge (B)
+				(H) edge (A);
+\end{tikzpicture}
+\caption{(iii) a self-complementary graph with 8 vertices}
+			\end{figure}
+	\end{itemize}
 \end{itemize}
-\clearpage
+
 \end{document}
 
