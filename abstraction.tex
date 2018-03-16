@@ -599,6 +599,111 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\end{figure}
 	\end{itemize}
 \end{itemize}
+\section*{Section (4)}
+\begin{itemize}
+		\item \underline{\textbf{Jordan curve}} is a continuous curve which doesn't intersect itself.
+		\item \underline{\textbf{Graph embedding}}: A graph $G$ can be embedded (or has an embedding) in a given space if it is isomorphic to a graph drawn in the space with points representing vertices of $G$ and Jordan curves representing edges in such a way that there are no crossings.
+		\item \underline{\textbf{Theorem 4A}}: \emph{Every graph can be embedded in Euclidean 3-space}.
+		\item \underline{\textbf{Planer graph}}: a graph that can be embedded in a plane.
+		\item \underline{\textbf{Theorem 4B}}: \emph{A graph is planer if and only if it can be embedded on the surface of a sphere}.
+\end{itemize}
 
+\section*{Section (5)}
+\begin{itemize}
+		\item A \underline{\textbf{walk}} in $G$ is a finite sequence of edges of the form $v_0 v_1, v_1 v_2, \cdots, v_{m-1} v_m$, where $v_0$ is the \textbf{initial vertex} and $v_m$ is the \textbf{finial vertex} of the walk, also the number of edges is called \textbf{length}.
+		\item \underline{\textbf{Trial}} is a walk in which all the edges are distinct. \underline{\textbf{path}} is a trial with all vertices are distinct also (expect, possibly $v_0 = v_m$ where then we call the trial or the path \underline{\textbf{closed}}). A closed path containing at least one edge is a \underline{\textbf{cycle}}\footnote{called \emph{circuit} in 3rd edition of the textbook}.
+		\item A graph is \underline{\textbf{connected}} if and only if there is a path between each pair of vertices.
+		\item \underline{\textbf{Theorem 5.1}} \emph{If $G$ is a bipartite graph, then each of $G$ has even length}.
+		\item \underline{\textbf{Theorem 5.2}} \emph{Let $G$ be a simple graph on $n$ vertices. If $G$ has $k$ components, then the number $m$ of edges of $G$ satisfies}
+				\begin{equation}
+						n-k \leq m \leq (n-k)(n-k+1)/2.
+				\end{equation}
+		\item \underline{\textbf{Corollary 5.3}} \emph{Any simple graph with $n$ vertices and more than $(n-1)(n-2)/2$ edges is connected}.
+		\item A \underline{\textbf{disconnecting set}} in a connected graph $G$ is a set of edges whose removal disconnects $G$ and increases the number of components of $G$.
+		\item A \underline{\textbf{cutset}} is defined to be a disconnecting set, no proper subset of which is a disconnecting set. If a cutset has only one edge $e$, we call $e$ a \underline{\textbf{bridge}}.
+		\item If $G$ is connected, its \underline{\textbf{edge connectivity}} $\lambda (G)$ is the size of the smallest cutset in $G$. Thus $\lambda (G)$ is the minimum number of edges that we need to delete in order to disconnect $G$.
+		\item If $G$ is connected and not a complete graph, its \underline{\textbf{vertex connectivity}} $\mathcal{K}(G)$ is the size of the smallest separating set in $G$. Thus $\mathcal{K}(G)$ is the minimum number of vertices that we need to delete in order to disconnect $G$.
+\end{itemize}
+
+\section*{Exercise 5}
+\begin{itemize}
+		\item[(5a)] {\color{blue} In the Petersen graph, find
+						\begin{itemize}
+								\item[(i)] a trail of length 5;
+								\item[(ii)] a path of length 9;
+								\item[(iii)] cycles of lengths 5, 6, 8 and 9;
+								\item[(iv)] cutsets with 3, 4 and 5 edges.
+						\end{itemize}
+				}
+				\hsplit
+			\begin{figure}[h!]
+			\centering 				
+			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 					 \node[state] 			(A)                    		{$a$};
+  					 \node[state]         (B) [below of=A] {$b$};
+  					 \node[state]         (C) [left of=B] 		{$c$};
+  					 \node[state]         (D) [right of=B] 	{$d$};
+					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 					  \path
+							  (A) edge[color=blue, very thick] (B)
+ 					 			(A) edge [color=blue, very thick] (C)
+ 					 			(A) edge (D)
+ 					 			(B) edge [color=blue, very thick] (H)
+ 					 			(B) edge (G)
+ 					 			(D) edge (F)
+ 					 			(F) edge (H)
+ 					 			(C) edge (E)
+ 					 			(E) edge (G)
+ 					 			(C) edge [color=blue, very thick] (I)
+ 					 			(H) edge [color=blue, very thick] (I)
+ 					 			(D) edge (J)
+ 					 			(G) edge (J)
+ 					 			(F) edge (E)
+ 					 			(I) edge (J);
+				\end{tikzpicture}
+				\caption{(i) a Petersen graph with trail of length 5 highlighted $\{ab, bh, hi, ic, ca\}$}
+			\end{figure}
+			
+			\begin{figure}[h!]
+			\centering 				
+			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 					 \node[state] 			(A)                    		{$a$};
+  					 \node[state]         (B) [below of=A] {$b$};
+  					 \node[state]         (C) [left of=B] 		{$c$};
+  					 \node[state]         (D) [right of=B] 	{$d$};
+					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 					  \path
+							  (A) edge[color=blue, very thick] (B)
+							  (A) edge [color=blue, very thick] (C)
+ 					 			(A) edge (D)
+ 					 			(B) edge [color=blue, very thick] (H)
+ 					 			(B) edge (G)
+ 					 			(D) edge  [color=blue, very thick] (F)
+ 					 			(F) edge  [color=blue, very thick] (H)
+ 					 			(C) edge  [color=blue, very thick] (E)
+ 					 			(E) edge  [color=blue, very thick] (G)
+ 					 			(C) edge  (I)
+ 					 			(H) edge (I)
+ 					 			(D) edge  [color=blue, very thick] (J)
+ 					 			(G) edge  [color=blue, very thick] (J)
+ 					 			(F) edge (E)
+ 					 			(I) edge (J);
+				\end{tikzpicture}
+				\caption{(i) a Petersen graph with path of length 9 highlighted $\{ab, bh, hf, fd, dj, ig, ge, ec, ca \}$}
+			\end{figure}
+
+\end{itemize}
 \end{document}
 
