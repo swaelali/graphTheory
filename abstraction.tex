@@ -701,9 +701,352 @@ For the graph $K_{3,4,5}$, there is 47 edges.
  					 			(F) edge (E)
  					 			(I) edge (J);
 				\end{tikzpicture}
-				\caption{(i) a Petersen graph with path of length 9 highlighted $\{ab, bh, hf, fd, dj, ig, ge, ec, ca \}$}
+				\caption{(ii) a Petersen graph with path of length 9 highlighted $\{ab, bh, hf, fd, dj, ig, ge, ec, ca \}$}
+			\end{figure}
+			
+			\begin{figure}[h!]
+			\centering 				
+			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 					 \node[state] 			(A)                    		{$a$};
+  					 \node[state]         (B) [below of=A] {$b$};
+  					 \node[state]         (C) [left of=B] 		{$c$};
+  					 \node[state]         (D) [right of=B] 	{$d$};
+					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 					  \path
+							  (A) edge (B)
+ 					 			(A) edge [color=blue, very thick] (C)
+ 					 			(A) edge [color=blue, very thick](D)
+ 					 			(B) edge  (H)
+ 					 			(B) edge (G)
+ 					 			(D) edge (F)
+ 					 			(F) edge (H)
+ 					 			(C) edge [color=blue, very thick](E)
+ 					 			(E) edge [color=blue, very thick](G)
+ 					 			(C) edge  (I)
+ 					 			(H) edge  (I)
+ 					 			(D) edge [color=blue, very thick](J)
+ 					 			(G) edge [color=blue, very thick](J)
+ 					 			(F) edge (E)
+ 					 			(I) edge (J);
+				\end{tikzpicture}
+				\caption{While (i) also represents a cycle of 5 length, this represents a cycle of 6 length highlighted $\{ac, ce, eg, gj, jd, da\}$}
 			\end{figure}
 
+			\begin{figure}[h!]
+			\centering 				
+			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 					 \node[state] 			(A)                    		{$a$};
+  					 \node[state]         (B) [below of=A] {$b$};
+  					 \node[state]         (C) [left of=B] 		{$c$};
+  					 \node[state]         (D) [right of=B] 	{$d$};
+					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 					  \path
+							  (A) edge [color=blue, very thick](B)
+ 					 			(A) edge [color=blue, very thick] (C)
+ 					 			(A) edge (D)
+ 					 			(B) edge  [color=blue, very thick](H)
+ 					 			(B) edge (G)
+ 					 			(D) edge (F)
+ 					 			(F) edge (H)
+ 					 			(C) edge [color=blue, very thick](E)
+ 					 			(E) edge [color=blue, very thick](G)
+ 					 			(C) edge  (I)
+ 					 			(H) edge  [color=blue, very thick](I)
+ 					 			(D) edge (J)
+ 					 			(G) edge [color=blue, very thick](J)
+ 					 			(F) edge (E)
+ 					 			(I) edge [color=blue, very thick](J);
+				\end{tikzpicture}
+				\caption{A cycle of 8 length highlighted $\{ac, ce, eg, gj, ji, ih, hb, ba\}$}
+			\end{figure}
+
+			\begin{figure}[h!]
+			\centering 				
+			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 					 \node[state] 			(A)                    		{$a$};
+  					 \node[state]         (B) [below of=A] {$b$};
+  					 \node[state]         (C) [left of=B] 		{$c$};
+  					 \node[state]         (D) [right of=B] 	{$d$};
+					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 					  \path
+							  (A) edge [color=blue, very thick](B)
+ 					 			(A) edge [color=blue, very thick] (C)
+ 					 			(A) edge (D)
+ 					 			(B) edge  [color=blue, very thick](H)
+ 					 			(B) edge (G)
+ 					 			(D) edge (F)
+ 					 			(F) edge [color=blue, very thick](H)
+ 					 			(C) edge (E)
+ 					 			(E) edge [color=blue, very thick](G)
+ 					 			(C) edge  [color=blue, very thick](I)
+ 					 			(H) edge  (I)
+ 					 			(D) edge (J)
+ 					 			(G) edge [color=blue, very thick](J)
+ 					 			(F) edge [color=blue, very thick](E)
+ 					 			(I) edge [color=blue, very thick](J);
+				\end{tikzpicture}
+				\caption{A cycle of 9 length highlighted $\{ac, ci, ij, jg, ge, ef, fh, hb, ba\}$}
+			\end{figure}
+
+			\begin{figure}[h!]
+			\centering 				
+			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 					 \node[state] 			(A)                    		{$a$};
+  					 \node[state]         (B) [below of=A] {$b$};
+  					 \node[state]         (C) [left of=B] 		{$c$};
+  					 \node[state]         (D) [right of=B] 	{$d$};
+					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 					  \path
+							  %(A) edge (B)
+ 					 			%(A) edge  (C)	
+							  %(A) edge (D)
+ 					 			(B) edge  (H)
+ 					 			(B) edge (G)
+ 					 			(D) edge (F)
+ 					 			(F) edge (H)
+ 					 			(C) edge (E)
+ 					 			(E) edge (G)
+ 					 			(C) edge  (I)
+ 					 			(H) edge  (I)
+ 					 			(D) edge (J)
+ 					 			(G) edge (J)
+ 					 			(F) edge (E)
+ 					 			(I) edge (J);
+				\end{tikzpicture}
+				\caption{A cutset of 3 edges $\{ac, ab, ac\}$}
+			\end{figure}
+
+			\begin{figure}[h!]
+			\centering 				
+			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 					 \node[state] 			(A)                    		{$a$};
+  					 \node[state]         (B) [below of=A] {$b$};
+  					 \node[state]         (C) [left of=B] 		{$c$};
+  					 \node[state]         (D) [right of=B] 	{$d$};
+					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 					  \path
+							  %(A) edge (B)
+ 					 			(A) edge  (C)	
+							  %(A) edge (D)
+ 					 			(B) edge  (H)
+ 					 			(B) edge (G)
+ 					 			(D) edge (F)
+ 					 			(F) edge (H)
+ 					 			%(C) edge (E)
+ 					 			(E) edge (G)
+ 					 			%(C) edge  (I)
+ 					 			(H) edge  (I)
+ 					 			(D) edge (J)
+ 					 			(G) edge (J)
+ 					 			(F) edge (E)
+ 					 			(I) edge (J);
+				\end{tikzpicture}
+				\caption{A cutset of 4 edges $\{ab, ac, ce, ci\}$}
+			\end{figure}
+			
+			\begin{figure}[h!]
+			\centering 				
+			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 					 \node[state] 			(A)                    		{$a$};
+  					 \node[state]         (B) [below of=A] {$b$};
+  					 \node[state]         (C) [left of=B] 		{$c$};
+  					 \node[state]         (D) [right of=B] 	{$d$};
+					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 					  \path
+							  	(A) edge (B)
+ 					 			(A) edge  (C)	
+							  	%(A) edge (D)
+ 					 			%(B) edge  (H)
+ 					 			%(B) edge (G)
+ 					 			(D) edge (F)
+ 					 			(F) edge (H)
+ 					 			%(C) edge (E)
+ 					 			(E) edge (G)
+ 					 			%(C) edge  (I)
+ 					 			(H) edge  (I)
+ 					 			(D) edge (J)
+ 					 			(G) edge (J)
+ 					 			(F) edge (E)
+ 					 			(I) edge (J);
+				\end{tikzpicture}
+				\caption{A cutset of 5 edges $\{ad, bh, bg, ce, ci\}$}
+			\end{figure}
+			
+			\clearpage
+	\item[(5c)] {\color{blue}Find $\mathcal{K}(G)$ and \lambda(G)$ for each of the following graphs (i) $C_6$, (ii) $W_6$, (iii) $K_{4,7}$, (iv) $Q_4$}
+	\hsplit
+	\begin{figure}[h!]
+	\begin{tikzpicture}[scale=.7, semithick]
+ 	  \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+\draw (60:2) arc (60:420:20mm);
+    %\node[state] (center) at (0,0) {};
+\foreach \phi in {1,...,6}{
+    \node[state,fill=white] (v_\phi) at (360/6 * \phi:2cm) {};
+         %\draw (v_\phi) -- (center);
+      }
+   \end{tikzpicture}
+   \caption{(i) $\mathcal{K}{(C_6)} = 2$ and $\lambda(C_6) = 2$}
+	\end{figure}
+
+	\begin{figure}[h!]
+	\begin{tikzpicture}[scale=.7, semithick]
+ 	  \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+\draw (60:2) arc (60:420:20mm);
+    \node[state] (center) at (0,0) {};
+\foreach \phi in {1,...,7}{
+    \node[state,fill=white] (v_\phi) at (360/7 * \phi:2cm) {};
+         \draw (v_\phi) -- (center);
+      }
+   \end{tikzpicture}
+   \caption{(ii) $\mathcal{K}{(W_8)} = 4$ and $\lambda(W_8) = 3$}
+	\end{figure}
+
+	\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=.7,-,auto,node distance=1.5cm, semithick]
+ 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+			\node[state]  (B) {};
+			\node[state]  (A) [left of=B]{};
+			\node[state]  (C) [right of=B]{};
+			\node[state]  (D) [right of=C]{};
+		 	\node[state]  (3) [below of=B]{};
+			\node[state]  (2) [left of=3]{};		
+			\node[state]  (1) [left of=2]{};
+		 	\node[state]  (4) [right of=3]{};
+		 	\node[state]  (5) [right of=4]{};
+		 	\node[state]  (6) [right of=5]{};
+		 	\node[state]  (7) [right of=6]{};
+		
+		 		\foreach \i in {A,...,D}{
+		 		 \foreach \j in {1,...,7}{
+		 			\draw  (\i) -- (\j);
+		 			}
+		 			}
+ 	\end{tikzpicture}
+	\caption{(iii) $\mathcal{K}{(K_{4,7})} = 4$ and $\lambda(W_8) = 4$}
+	\end{figure}
+	
+	\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=.8cm, semithick]
+			\tikzstyle{every state}=[circle(3pt),fill=white, draw=black, text=black,  minimum size=3pt]
+ 					 \node[state] 			(A)                    		{};
+ 					 \node[state] 			(B) [right of=A]                   		{};
+ 					 \node[state] 			(C) [below of=B]                   		{};
+ 					 \node[state] 			(D) [below of=A]                  		{};
+ 					 \node[state]          (E) [above left of=A] {};
+ 					 \node[state]          (F) [above right of=B] {};
+ 					 \node[state]          (G) [below right of=C] {};
+ 					 \node[state]          (H) [below left of=D] {};
+					 \node[state]          (I) [above left of=E] {};
+ 					 \node[state]          (J) [above right of=F] {};
+ 					 \node[state]          (K) [below right of=G] {};
+ 					 \node[state]          (L) [below left of=H] {};
+					 \node[state]          (M) [above left of=I] {};
+ 					 \node[state]          (N) [above right of=J] {};
+ 					 \node[state]          (O) [below right of=K] {};
+ 					 \node[state]          (P) [below left of=L] {};
+
+
+					 \path
+				(A) edge (B)
+				(B) edge (C)
+				(C) edge (D)
+				(D) edge (A)
+				(E) edge (F)
+				(F) edge (G)
+				(G) edge (H)
+				(H) edge (E)
+				(A) edge (E)
+				(B) edge (F)
+				(C) edge (G)
+				(D) edge (H)
+				(I) edge (J)
+				(J) edge (K)
+				(K) edge (L)
+				(L) edge (I)
+				(M) edge (N)
+				(N) edge (O)
+				(O) edge (P)
+				(P) edge (M)
+				(E) edge (I)
+				(F) edge (J)
+				(G) edge (K)
+				(H) edge (L)
+				(M) edge (I)
+				(N) edge (J)
+				(O) edge (K)
+				(P) edge (L)
+				(A) edge [bend left] (M)
+				(B) edge [bend left] (N)
+				(C) edge [bend left] (O)
+				(D) edge [bend left] (P)
+				;
+				
+	\end{tikzpicture}
+	\caption{(iv) $\mathcal{K}{(Q_{4})} = 3$ and $\lambda(Q_4) = 8$}
+	\end{figure}
+	%\clearpage
+
+	\item[(5f)] {\color{blue} Prove that if $G$ is a simple graph, then $G$ and $\overline{G}$ cannot both be disconnected}
+	\hsplit
+
+	To prove this we need to prove that the complement of a disconnected graph $G$ is connected.\\
+	That is without loss of generality, assume $G$ is disconnected. Now consider two vertices $x$ and $y$ in $\overline{G}$. If $x$ and $y$ are not adjacent in $G$, then they will be adjacent in $\overline{G}$ and we can find a trivial $x-y$ path. If $x$ and $y$ are adjacent in $G$ then they must have been in the same component. This means that the edges $xz$ and $yz$ were not in $G$. This implies that they both must be edges in $\overline{G}$. This gives us the path $x \rightarrow y \rightarrow z$. Therefore, in $\overline{G}$ we have that there exists a path between any two vertices and hence it is connected.
+
+\end{itemize}
+
+\section*{Section (6)}
+\begin{itemize}
+		\item A connected graph $G$ is \underline{\textbf{Eulerian}} if there exists a closed trial containing every edge of $G$. Such trial is an \underline{\textbf{Eulerian trial}}. A non-Eulerian graph is \underline{\textbf{semi-Eulerian}} if there exists a trail containing every edge of $G$.
+		\item \underline{\textbf{Lemma 6a}}: \emph{If $G$ is a graph in which the degree of each vertex is at least 2, then G contains a cycle.}
+		\\
+		\item \underline{\textbf{Theorem 6b}}: \emph{A connected graph $G$ is Eulerian if and only if the degree of each vertex of G is even.}
+		\item \underline{\textbf{Corollary 6c}}: \emph{A connected graph is Eulerian if and only its set of edges can be split up into disjoint cycles.}
+		\item \underline{\textbf{Corollary 6d}}: \emph{A connected graph is semi-Eulerian if and only if it has eactly two vertices of odd degree}.
+		\item \underline{\textbf{Theorem 6e}}: \emph{Let $G$ be an Eulerian graph. Then the following construction is always possible, and produces an Eulerian trial of $G$.\\
+				Start at any vertex $u$ and traverse the edges in an arbitrary manner, subject only to the following rules:
+				\begin{itemize}
+					\item[(i)] erase the edges as they traversed, and if any isolated vertices result, erase them too;
+					\item[(ii)] at each stage, use a bridge only if there is no alternative.
+				\end{itemize}
+				}
 \end{itemize}
 \end{document}
 
