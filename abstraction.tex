@@ -2,9 +2,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{fontspec}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{soul}
 \usepackage{pgf}
 \usepackage{tikz}
 \usetikzlibrary{arrows,automata}
@@ -12,6 +14,7 @@
 \usetikzlibrary{positioning}
 \usepackage{titlesec}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\setmainfont{Gentium}
 \author{Wael Ali}
 \date{}
 \title{Abstraction of Graph Theory}
@@ -19,30 +22,30 @@
 \newcommand{\hsplit}{\rule{\linewidth}{1pt}\\}
 
 \maketitle
-\section*{Section (2)}
+\section*{2: Definitions}
 \begin{itemize}
-\item A \underline{\textbf{simple graph}} $G$ consists of a non-empty finite set $V(G)$ of elements called vertices
+\item A \underline{\emph{\color{magenta} simple graph}} $G$ consists of a non-empty finite set $V(G)$ of elements called vertices
 (or nodes), and a finite set $E(G)$ of distinct unordered pairs of distinct elements of $V(G)$ called edges.
-\item A \underline{\textbf{graph}} $G$ consists of a non-empty finite set $V(G)$ of elements called vertices, and a finite family $E(G)$ of unordered pairs of (not necessarily distinct) elements of $V(G)$ called edges.
-\item Two graphs $G1$ and $G2$ are \underline{\textbf{isomorphic}} if there is a one-one correspondence between the vertices of $G_x$ and those of $G2$ such that the number of edges joining any two vertices of $G_x$ is equal to the number of edges joining the corresponding vertices of $G2$ .
+\item A \underline{\emph{\color{magenta} graph}} $G$ consists of a non-empty finite set $V(G)$ of elements called vertices, and a finite family $E(G)$ of unordered pairs of (not necessarily distinct) elements of $V(G)$ called edges.
+\item Two graphs $G1$ and $G2$ are \underline{\emph{\color{magenta} isomorphic}} if there is a one-one correspondence between the vertices of $G_x$ and those of $G2$ such that the number of edges joining any two vertices of $G_x$ is equal to the number of edges joining the corresponding vertices of $G2$ .
 	\begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.4]{figures/isomorphism1.png}
 	\caption{Two simple graphs that are isomorphic to each other}
 	\end{figure}
-\item A graph is \underline{\textbf{connected}} if it cannot be expressed as the union of two graphs, and \underline{\textbf{disconnected}}.
+\item A graph is \underline{\emph{\color{magenta} connected}} if it cannot be expressed as the union of two graphs, and \underline{\emph{\color{magenta} disconnected}}.
 	\begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.5]{figures/graphUion.png}
 	\caption{Each of $G_1$ and $G_2$ is a component of $G_1 \cup G_2$}
 	\end{figure}
-\item Two vertices $v$ and $w$ of a graph $G$ are \underline{\textbf{adjacent}} if there is an edge $vw$ joining them, and the vertices $v$ and $w$ are then \underline{\textbf{incident}} with such an edge. Similarly, two distinct edges e and/are adjacent if they have a vertex in common.
-\item The \underline{\textbf{degree}} of a vertex $v$ of $G$ is the number of edges incident with $v$, and is written $deg(v)$. \emph{Loop}-edge increase node-degree by 2. vertex of degree 0 is an \underline{\textbf{isolated vertex}} and a vertex of degree 1 is an \underline{\textbf{end-vertex}}.
-\item \textbf{\underline{Handshaking lemma}}; in any graph the sum of all the vertex-degrees is an even number - in
+\item Two vertices $v$ and $w$ of a graph $G$ are \underline{\emph{\color{magenta} adjacent}} if there is an edge $vw$ joining them, and the vertices $v$ and $w$ are then \underline{\emph{\color{magenta} incident}} with such an edge. Similarly, two distinct edges e and/are adjacent if they have a vertex in common.
+\item The \underline{\emph{\color{magenta} degree}} of a vertex $v$ of $G$ is the number of edges incident with $v$, and is written $deg(v)$. \emph{Loop}-edge increase node-degree by 2. vertex of degree 0 is an \underline{\emph{\color{magenta} isolated vertex}} and a vertex of degree 1 is an \underline{\emph{\color{magenta} end-vertex}}.
+\item \underline{\emph{\color{magenta}Handshaking lemma}}; in any graph the sum of all the vertex-degrees is an even number - in
 fact, twice the number of edges, since each edge contributes exactly 2 to the sum.
-\item A \textbf{\underline{subgraph}} of a graph $G$ is a graph, each of whose vertices belongs to $V(G)$ and each
+\item A \underline{\emph{\color{magenta}subgraph}} of a graph $G$ is a graph, each of whose vertices belongs to $V(G)$ and each
 of whose edges belongs to $E(G)$.
-\item \underline{\textbf{Matrix representation}} one way to represent graph is by its \textbf{adjacency matrix} $A$, and its \textbf{incidence matrix} $M$ as follows;
+\item \underline{\emph{\color{magenta} Matrix representation}} one way to represent graph is by its \textbf{adjacency matrix} $A$, and its \textbf{incidence matrix} $M$ as follows;
 	\begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.55]{figures/matrixRepresentation.png}
@@ -338,17 +341,17 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 \end{itemize}
 \clearpage 
 
-\section*{Section (3)}
+\section*{3: Examples of graphs}
 \begin{itemize}
-	\item \underline{\textbf{Null graphs}}, a graph whose edge-set is empty. \underline{\textbf{Complete graph}}, a simple graph in which each pair of distinct vertices are adjacent, in this case $k$-vertex must has $n(n-1)/2$ degree as $n$ the total number of vertices.
-	\item \underline{\textbf{Regular graph}}, a graph in which each vertex has the same degree. \textbf{Platonic graphs}, formed from the vertices and edges of the five regular (Platonic) solids - the tetrahedron, octahedron, cube.
-	\item \textbf{\underline{Bipartite graph}}, If the vertex set of a graph G can be split into two disjoint sets A and B so that each edge of G joins a vertex of A and a vertex of B.  A \textbf{complete bipartite graph} is a bipartite graph in which each vertex in A is joined to each vertex in B by just one edge.
-	\item \underline{\textbf{Cubes}}, the $k$-cube $Q_k$ is the graph whose vertices correspond to the sequences ($a_1, a_2, \cdots, a_k$ ), where each $a_i = 0 $ or $1$, and whose edges join those sequences that differ in just one place. You should check that $Q_k$ has $2^{k}$ vertices and $k 2^{k-1}$ edges, and is regular of degree $k$.\\
+	\item \underline{\emph{\color{magenta} Null graphs}}, a graph whose edge-set is empty. \underline{\emph{\color{magenta} Complete graph}}, a simple graph in which each pair of distinct vertices are adjacent, in this case $k$-vertex must has $n(n-1)/2$ degree as $n$ the total number of vertices.
+	\item \underline{\emph{\color{magenta} Regular graph}}, a graph in which each vertex has the same degree. \textbf{Platonic graphs}, formed from the vertices and edges of the five regular (Platonic) solids - the tetrahedron, octahedron, cube.
+	\item \underline{\emph{\color{magenta}Bipartite graph}}, If the vertex set of a graph G can be split into two disjoint sets A and B so that each edge of G joins a vertex of A and a vertex of B.  A \textbf{complete bipartite graph} is a bipartite graph in which each vertex in A is joined to each vertex in B by just one edge.
+	\item \underline{\emph{\color{magenta} Cubes}}, the $k$-cube $Q_k$ is the graph whose vertices correspond to the sequences ($a_1, a_2, \cdots, a_k$ ), where each $a_i = 0 $ or $1$, and whose edges join those sequences that differ in just one place. You should check that $Q_k$ has $2^{k}$ vertices and $k 2^{k-1}$ edges, and is regular of degree $k$.\\
 	\begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.7]{figures/cube1.png}
 	\end{figure}
-	\item \textbf{\underline{Complement of a simple graph}}, if $G$ is a simple graph with vertex set $V(G)$, its complement $\overline{G}$ is the simple graph with vertex set $V(G)$ in which two vertices are adjacent if and only if they are not adjacent in $G$.
+	\item \underline{\emph{\color{magenta}Complement of a simple graph}}, if $G$ is a simple graph with vertex set $V(G)$, its complement $\overline{G}$ is the simple graph with vertex set $V(G)$ in which two vertices are adjacent if and only if they are not adjacent in $G$.
 \end{itemize}
 
 \section*{Exercise 3}
@@ -599,30 +602,30 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\end{figure}
 	\end{itemize}
 \end{itemize}
-\section*{Section (4)}
+\section*{4: Embeddings of graphs}
 \begin{itemize}
-		\item \underline{\textbf{Jordan curve}} is a continuous curve which doesn't intersect itself.
-		\item \underline{\textbf{Graph embedding}}: A graph $G$ can be embedded (or has an embedding) in a given space if it is isomorphic to a graph drawn in the space with points representing vertices of $G$ and Jordan curves representing edges in such a way that there are no crossings.
-		\item \underline{\textbf{Theorem 4A}}: \emph{Every graph can be embedded in Euclidean 3-space}.
-		\item \underline{\textbf{Planer graph}}: a graph that can be embedded in a plane.
-		\item \underline{\textbf{Theorem 4B}}: \emph{A graph is planer if and only if it can be embedded on the surface of a sphere}.
+		\item \underline{\emph{\color{magenta} Jordan curve}} is a continuous curve which doesn't intersect itself.
+		\item \underline{\emph{\color{magenta} Graph embedding}}: A graph $G$ can be embedded (or has an embedding) in a given space if it is isomorphic to a graph drawn in the space with points representing vertices of $G$ and Jordan curves representing edges in such a way that there are no crossings.
+		\item \underline{\emph{\color{magenta} Theorem 4A}}: \hl{\emph{Every graph can be embedded in Euclidean 3-space}}.
+		\item \underline{\emph{\color{magenta} Planer graph}}: a graph that can be embedded in a plane.
+		\item \underline{\emph{\color{magenta} Theorem 4B}}:\hl{\emph{A graph is planer if and only if it can be embedded on the surface of a sphere}}.
 \end{itemize}
 
-\section*{Section (5)}
+\section*{5: More definitions}
 \begin{itemize}
-		\item A \underline{\textbf{walk}} in $G$ is a finite sequence of edges of the form $v_0 v_1, v_1 v_2, \cdots, v_{m-1} v_m$, where $v_0$ is the \textbf{initial vertex} and $v_m$ is the \textbf{finial vertex} of the walk, also the number of edges is called \textbf{length}.
-		\item \underline{\textbf{Trial}} is a walk in which all the edges are distinct. \underline{\textbf{path}} is a trial with all vertices are distinct also (expect, possibly $v_0 = v_m$ where then we call the trial or the path \underline{\textbf{closed}}). A closed path containing at least one edge is a \underline{\textbf{cycle}}\footnote{called \emph{circuit} in 3rd edition of the textbook}.
-		\item A graph is \underline{\textbf{connected}} if and only if there is a path between each pair of vertices.
-		\item \underline{\textbf{Theorem 5.1}} \emph{If $G$ is a bipartite graph, then each of $G$ has even length}.
-		\item \underline{\textbf{Theorem 5.2}} \emph{Let $G$ be a simple graph on $n$ vertices. If $G$ has $k$ components, then the number $m$ of edges of $G$ satisfies}
+		\item A \underline{\emph{\color{magenta} walk}} in $G$ is a finite sequence of edges of the form $v_0 v_1, v_1 v_2, \cdots, v_{m-1} v_m$, where $v_0$ is the \textbf{initial vertex} and $v_m$ is the \textbf{finial vertex} of the walk, also the number of edges is called \textbf{length}.
+		\item \underline{\emph{\color{magenta} Trial}} is a walk in which all the edges are distinct. \underline{\emph{\color{magenta} path}} is a trial with all vertices are distinct also (expect, possibly $v_0 = v_m$ where then we call the trial or the path \underline{\emph{\color{magenta} closed}}). A closed path containing at least one edge is a \underline{\emph{\color{magenta} cycle}}\footnote{called \emph{circuit} in 3rd edition of the textbook}.
+		\item A graph is \underline{\emph{\color{magenta} connected}} if and only if there is a path between each pair of vertices.
+		\item \underline{\emph{\color{magenta} Theorem 5.1}} \hl{\emph{If $G$ is a bipartite graph, then each of $G$ has even length}}.
+		\item \underline{\emph{\color{magenta} Theorem 5.2}} \hl{\emph{Let $G$ be a simple graph on $n$ vertices. If $G$ has $k$ components, then the number $m$ of edges of $G$ satisfies}}
 				\begin{equation}
 						n-k \leq m \leq (n-k)(n-k+1)/2.
 				\end{equation}
-		\item \underline{\textbf{Corollary 5.3}} \emph{Any simple graph with $n$ vertices and more than $(n-1)(n-2)/2$ edges is connected}.
-		\item A \underline{\textbf{disconnecting set}} in a connected graph $G$ is a set of edges whose removal disconnects $G$ and increases the number of components of $G$.
-		\item A \underline{\textbf{cutset}} is defined to be a disconnecting set, no proper subset of which is a disconnecting set. If a cutset has only one edge $e$, we call $e$ a \underline{\textbf{bridge}}.
-		\item If $G$ is connected, its \underline{\textbf{edge connectivity}} $\lambda (G)$ is the size of the smallest cutset in $G$. Thus $\lambda (G)$ is the minimum number of edges that we need to delete in order to disconnect $G$.
-		\item If $G$ is connected and not a complete graph, its \underline{\textbf{vertex connectivity}} $\mathcal{K}(G)$ is the size of the smallest separating set in $G$. Thus $\mathcal{K}(G)$ is the minimum number of vertices that we need to delete in order to disconnect $G$.
+		\item \underline{\emph{\color{magenta} Corollary 5.3}} \emph{Any simple graph with $n$ vertices and more than $(n-1)(n-2)/2$ edges is connected}.
+		\item A \underline{\emph{\color{magenta} disconnecting set}} in a connected graph $G$ is a set of edges whose removal disconnects $G$ and increases the number of components of $G$.
+		\item A \underline{\emph{\color{magenta} cutset}} is defined to be a disconnecting set, no proper subset of which is a disconnecting set. If a cutset has only one edge $e$, we call $e$ a \underline{\emph{\color{magenta} bridge}}.
+		\item If $G$ is connected, its \underline{\emph{\color{magenta} edge connectivity}} $\lambda (G)$ is the size of the smallest cutset in $G$. Thus $\lambda (G)$ is the minimum number of edges that we need to delete in order to disconnect $G$.
+		\item If $G$ is connected and not a complete graph, its \underline{\emph{\color{magenta} vertex connectivity}} $\mathcal{K}(G)$ is the size of the smallest separating set in $G$. Thus $\mathcal{K}(G)$ is the minimum number of vertices that we need to delete in order to disconnect $G$.
 \end{itemize}
 
 \section*{Exercise 5}
@@ -909,7 +912,7 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\end{figure}
 			
 			\clearpage
-	\item[(5c)] {\color{blue}Find $\mathcal{K}(G)$ and \lambda(G)$ for each of the following graphs (i) $C_6$, (ii) $W_6$, (iii) $K_{4,7}$, (iv) $Q_4$}
+	\item[(5c)] {\color{blue}Find $\mathcal{K}(G)$ and $\lambda(G)$ for each of the following graphs (i) $C_6$, (ii) $W_6$, (iii) $K_{4,7}$, (iv) $Q_4$}
 	\hsplit
 	\begin{figure}[h!]
 	\begin{tikzpicture}[scale=.7, semithick]
@@ -965,7 +968,7 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 	\begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=.8cm, semithick]
-			\tikzstyle{every state}=[circle(3pt),fill=white, draw=black, text=black,  minimum size=3pt]
+			\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
  					 \node[state] 			(A)                    		{};
  					 \node[state] 			(B) [right of=A]                   		{};
  					 \node[state] 			(C) [below of=B]                   		{};
@@ -1032,15 +1035,15 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 
 \end{itemize}
 
-\section*{Section (6)}
+\section*{6: Eulerian graphs}
 \begin{itemize}
-		\item A connected graph $G$ is \underline{\textbf{Eulerian}} if there exists a closed trial containing every edge of $G$. Such trial is an \underline{\textbf{Eulerian trial}}. A non-Eulerian graph is \underline{\textbf{semi-Eulerian}} if there exists a trail containing every edge of $G$.
-		\item \underline{\textbf{Lemma 6a}}: \emph{If $G$ is a graph in which the degree of each vertex is at least 2, then G contains a cycle.}
+		\item A connected graph $G$ is \underline{\emph{\color{magenta} Eulerian}} if there exists a closed trial containing every edge of $G$. Such trial is an \underline{\emph{\color{magenta} Eulerian trial}}. A non-Eulerian graph is \underline{\emph{\color{magenta} semi-Eulerian}} if there exists a trail containing every edge of $G$.
+		\item \underline{\emph{\color{magenta} Lemma 6a}}: \emph{If $G$ is a graph in which the degree of each vertex is at least 2, then G contains a cycle.}
 		\\
-		\item \underline{\textbf{Theorem 6b}}: \emph{A connected graph $G$ is Eulerian if and only if the degree of each vertex of G is even.}
-		\item \underline{\textbf{Corollary 6c}}: \emph{A connected graph is Eulerian if and only its set of edges can be split up into disjoint cycles.}
-		\item \underline{\textbf{Corollary 6d}}: \emph{A connected graph is semi-Eulerian if and only if it has eactly two vertices of odd degree}.
-		\item \underline{\textbf{Theorem 6e}}: \emph{Let $G$ be an Eulerian graph. Then the following construction is always possible, and produces an Eulerian trial of $G$.\\
+		\item \underline{\emph{\color{magenta} Theorem 6b}}: \hl{\emph{A connected graph $G$ is Eulerian if and only if the degree of each vertex of G is even.}}
+		\item \underline{\emph{\color{magenta} Corollary 6c}}: \emph{A connected graph is Eulerian if and only its set of edges can be split up into disjoint cycles.}
+		\item \underline{\emph{\color{magenta} Corollary 6d}}: \emph{A connected graph is semi-Eulerian if and only if it has eactly two vertices of odd degree}.
+		\item \underline{\emph{\color{magenta} Theorem 6e}}: \emph{Let $G$ be an Eulerian graph. Then the following construction is always possible, and produces an Eulerian trial of $G$.\\
 				Start at any vertex $u$ and traverse the edges in an arbitrary manner, subject only to the following rules:
 				\begin{itemize}
 					\item[(i)] erase the edges as they traversed, and if any isolated vertices result, erase them too;
@@ -1048,5 +1051,247 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 				\end{itemize}
 				}
 \end{itemize}
+
+\section*{Exercise 6}
+\begin{itemize}
+		\item[(6a)] {\color{blue} Which of the following graphs are Eulerian? semi-Eulerian?
+				\begin{itemize}
+						\item the complete graph $K_5$.
+						\item the complete bipartite graph $k_{4,3}$.
+						\item the graph of cube.
+						\item the graph of octahedron.
+						\item the Petersen graph.
+				\end{itemize}
+				}
+			\hsplit
+		\item[(6b)] {\color{blue} 			
+				\begin{itemize}
+						\item For which values of $n$ is $K_n$ Eulerian?
+						\item Which complete bipartite graphs are Eulerian?
+						\item Which Platonic graphs are Eulerian?
+						\item For which values of $n$ is the wheel $W_n$ Eulerian?
+						\item For which values of $k$ the $k-$cube $Q_n$ Eulerian?
+				\end{itemize}
+				}
+			\hsplit
+		\item[(6c)] {\color{blue} Let $G$ a connected graph with $k(>0)$ vertices of odd degree.
+				\begin{itemize}
+						\item[(i)] Show that the minimum number of trials, which have no edges in common add which together include every edge of $G$, is $\frac{1}{2}k$.
+						\item[(ii)] How many continuous pen-strokes are needed to draw the diagram in Figure without repeating any line?
+						\begin{figure}[h!]
+							
+						\end{figure}
+				\end{itemize}
+				}
+\end{itemize}
+
+\section*{7: Hamiltonian graphs}
+\begin{itemize}
+		\item a closed trail passing exactly once through each vertex of $G$. Such a trail must be a cycle, except when $G$ is the graph $N_1$. Such a cycle is a \underline{\emph{\color{magenta} Hamiltonian cycle}} and $G$ is a \underline{\emph{\color{magenta} Hamiltonian graph}}. A \underline{\emph{\color{magenta} non-Hamiltonian graph}} $G$ is semi-Hamiltonian if there exists a path passing through every verte$x$.
+		\item \underline{\emph{\color{magenta} Theorem 7A}} \hl{\emph{If G is a simple graph with $n(\geq3)$ vertices, and if $\rho(\nu) + \rho(\nu) \geq n$ for each of non-adjacent vertices $\nu$ and $w$, then $G$ is Hamiltonian}}. \footnote{$\rho$ is referred as "deg"} 
+		\item \underline{\emph{\color{magenta} Dirac 1952}} \hl{\emph{If $G$ is a simple graph with $n(\geq3)$ vertices, and if $\rho(\nu) \geq \frac{1}{2} n$ for every vertex $\nu$ then $G$ is Hamiltonian.}}
+\end{itemize}
+
+\section*{Exercise 7}
+\begin{itemize}
+		\item[(7a)] {\color{blue} Which of the following graphs are Hamilitonain? semi-Hamiltonian?
+			\begin{itemize}
+				\item[i] the complete graph $K_5$.
+				\item[ii] the complete bipartite graph $K_{5,3}$.
+				\item[iii] the graph of the octahedron.
+				\item[iv] the wheel $W_6$.
+				\item[v] the 4-cube $Q_4$.
+			\end{itemize}
+			}
+			\hsplit
+	\item[(7b)] {\color{blue}
+			\begin{itemize}
+				\item[i] For which values of $n$ is $K_n$ Hamiltonian?
+				\item[ii] Which complete bipartite graphs are Hamiltonian?
+				\item[iii] Which Platonic graphs are Hamiltonian?
+				\item[iv] For which values of $n$ is the wheel $W_n$ Hamiltonian?
+				\item[v] For which values of $k$ if the $k-$cube $Q_n$ Hamiltonian?
+			\end{itemize}	
+			}
+\end{itemize}
+
+\section*{Some applications}
+\begin{itemize}
+		\item The short path problem.
+		\item The Chinese postman problem.
+		\item The travelling salesman problem.
+\end{itemize}
+
+\section*{9: Elementary properties of trees}
+\begin{itemize}
+		\item A \textbf{forest} is defined to be a graph which contains no cycles and a connected forest is called a \textbf{\emph{tree}}.
+		\item \underline{\emph{\color{magenta} Theorem 9A}} \emph{Let $T$ be a graph with $n$ vertices. Then the following statements are equivalent:
+			\begin{itemize}
+				\item[(i)] $T$ is a tree.
+				\item[(ii)] $T$ contains no cycles, and has $n-1$ edges.
+				\item[(iii)] $T$ is connected, and has $n-1$ edges.
+				\item[(iv)] $T$ is connected, and every edge is a bridge.
+				\item[(v)] any two vertices of $T$ are connected by exactly one path.
+				\item[(vi)] $T$ contains no cycles, but the addition of any new edge creates exactly one cycle.
+			\end{itemize}
+				} 
+		\item \underline{\emph{\color{magenta} Corollary 9B}} \emph{If $G$ be a forest with $n$ vertices and $k$ components, then $G$ has $n-k$ edges.}
+\item \begin{small} Given any connected graph $G$, we can choose a cycle and remove any one of its edges, and the resulting graph remains connected. If we repeat this procedure until there are no cycles left. The graph that remains is a tree that connects all the vertices of $G$. It is called a \underline{\emph{\color{magenta} spanning tree}} of $G$. Generally, if $G$ is an arbitrary graph with $n$ vertices, $m$ edges and $k$ compopnents, then we can carry out this procedure on each component of $G$. The result is	called a \underline{\emph{\color{magenta} spanning forest}}, and the total number of edges removed in this process is the	cycle rank of $G$, denoted by $\gamma(G)$. the cutset rank of $G$ to be the number of edges in a spanning forest, denoted by $\xi(G) = n - k$ \end{small}
+		\item \underline{\emph{\color{magenta} Theorem 9C}} \emph{If $T$ is any spanning forest of a graph $G$, then
+			\begin{itemize}
+				\item[(i)] every cutset of $G$ has an edge in common with $T$.
+				\item[(ii)] every cutset of $G$ has an edge in common with the complement of $T$.
+			\end{itemize}
+		}
+\end{itemize}
+
+\section*{Exercise 9}
+	\begin{itemize}
+		\item {\color{blue} Prove that every tree is a bipartie graph.}
+		\item {\color{blue} Which trees are complete bipartite graphs?}
+		\item {\color{blue} Draw all the spanning trees in the graph of the following figure}.
+			\begin{figure}[h!]
+				\centering
+				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
+						\node[state] 		(A)                    		{$a$};
+ 					 	\node[state] 			(B) [below of=A]            {$b$};
+ 					 	\node[state] 			(C) [right of=B]            	{$c$};
+ 					 	\node[state] 			(D) [right of=A]            {$d$};
+						\node [below right of=B]		{($i$)};
+ 				  \path
+					 (A) edge (B)
+			 		 (A) edge (D)
+					 (A) edge (C)
+					 (D) edge (C)
+					 (B) edge (C);
+				\end{tikzpicture}				
+				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
+						\node[state] 		(C)                    		{$c$};
+ 					 	\node[state] 			(A) [above left of=C]            {$a$};
+						\node[state] 			(D) [above right of=C]            	{$d$};
+						\node[state] 			(E) [below right of=C]            {$e$};
+ 					 	\node[state] 			(B) [below left of=C]            {$b$};
+						\node [below right of=B]		{($ii$)};
+ 				  \path
+					 (A) edge (C)
+			 		 (A) edge (B)
+					 (D) edge (C)
+					 (D) edge (E)
+					 (B) edge (C)
+					 (E) edge (C);
+				\end{tikzpicture}
+		
+			\end{figure}
+			\centering
+	\item {\color{blue} Find the fundamental sets of cycles and cutsets of the graph if the following figure, associated with the spanning tree shown}	
+					\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
+						\node[state] 		(E)                    		{$e$};
+ 					 	\node[state] 			(A) [below left=1.5cm of E]            {$a$};
+						\node[state] 			(D) [below right=1.5cm of E]            	{$d$};
+						\node[state] 			(C) [below left=1.5cm and 0.4cm of D]            {$c$};
+ 					 	\node[state] 			(B) [below right=1.5cm and 0.4cm of A]            {$b$};
+				
+						\path
+							(E) edge (A)
+							(E) edge [very thick, blue] (D)
+							(A) edge [very thick, blue] (B)
+							(D) edge [very thick, blue] (C)
+							(B) edge [very thick, blue] (C)
+							(B) edge [bend right] (C)
+							(E) edge (B)
+							(E) edge (C);
+
+				\end{tikzpicture}	
+	
+	\end{itemize}
+	
+\section*{10: The enumeration of trees}
+\begin{itemize}
+	\item \underline{\emph{\color{magenta} Labelling}} of a graph $G$ on $n$ vertices to be one-one mapping from the vertex-set of $G$ onto the set ${1, \cdots ,n}$, a \underline{\emph{\color{magenta} labelled graph}} is then a pair $(G, \phi)$, where $\phi$ is a labelling of $G$.
+	\item \underline{\emph{\color{magenta}Theorem 10A} (Cayley)} \hl{\emph{There are $n^{n-2}$ distinct labelled trees on $n$ vertices}}.
+	\item \underline{\emph{\color{magenta}Corrollary 10B}} \emph{The number of spanning trees of $K_n$ is $n^{n-2}$}.
+	\item \underline{\emph{\color{magenta}Theorem 10C}} \emph{Let $G$ be a connected simple graph with vertex set $\{v_1,\cdots,v_n \}$, and let \textbf{M} $= (m_{ij})$ be $n \times n$ matrix in which $m_{ii} = \rho(v_i), m_{ij} = -1 $ if $v_i$ and $v_j$ are adjacent, and $m_{ij}=0$ otherwise. Then the number of spanning trees of $G$ is equal to the cofactor of any element of \textbf{M}}.	
+\end{itemize}
+
+\section*{Exercise 10}
+\begin{itemize}
+	\item {\color{blue} Verify directly that there are exactly 125 labelled trees on five vertices.}
+	\item {\color{blue} \begin{itemize}
+		\item[(i)] Show that there are exactly $2^{n(n-1)/2}$ labelled simple graphs on $n$ vertices.
+		\item[(ii)] How many of these have exactly $m$ edges?
+	\end{itemize}}
+	\item {\color{blue} In the first proof of Cayley's theorem, fin:
+	\begin{itemize}
+			\item[(i)] the labelled trees corresponding to the sequences (1,2,3,4) and (3,3,3,3).
+		\item[(ii)] the sequences corresponding to the labelled tree in the following figure
+	\end{itemize}}
+	\begin{figure}[h!]
+				\centering
+				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
+						\node[state] 		(5)                    		{$5$};
+						\node[state] 			(4) [below of=5]            {$4$};
+ 					 	\node[state] 			(2) [right of=4]            	{$2$};
+ 					 	\node[state] 			(1) [left of=4]            {$1$};
+ 					 	\node[state] 			(6) [left of=1]            {$6$};
+ 					 	\node[state] 			(3) [below of=4]            {$3$};
+ 				  \path
+					 (5) edge (4)
+			 		 (4) edge (3)
+					 (2) edge (4)
+					 (4) edge (1)
+					 (6) edge (1);
+				\end{tikzpicture}	
+
+				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
+						\node[state] 		(2)                    		{$2$};
+						\node[state] 			(4) [right of=2]            {$4$};
+ 					 	\node[state] 			(3) [above left of=2]            	{$3$};
+ 					 	\node[state] 			(1) [above right of=4]            {$1$};
+ 					 	\node[state] 			(6) [below right of=4]            {$6$};
+ 					 	\node[state] 			(5) [below left of=2]            {$5$};
+ 				  \path
+					 (5) edge (2)
+			 		 (4) edge (2)
+					 (1) edge (4)
+					 (4) edge (6)
+					 (3) edge (2);
+				\end{tikzpicture}	
+			\end{figure}
+	\item {\color{blue} How many spanning trees has $K_{2,s}$?}
+\end{itemize}
+
+\section*{More Applications}
+\begin{itemize}
+	\item The minimum connector problem.
+	\item Enumeration of chemical molecules.
+	\item Electrical networks.
+\end{itemize}
+
+\section*{12: Planar graphs}
+
+\section*{Exercise 12}
+
+\section*{13: Euler's formula for plane graphs}
+
+\section*{Exercise 13}
+
+\section*{14: Graphs on other surfaces}
+
+\section*{Exercise 14}
+
+\section*{15: Dual graphs}
+
+\section*{Exercise 15}
+
+\section*{16: Infinite graphs}
+
+\section*{Exercise 16}
+
+
 \end{document}
 
