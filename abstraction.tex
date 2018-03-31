@@ -1088,7 +1088,7 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 \section*{7: Hamiltonian graphs}
 \begin{itemize}
 		\item a closed trail passing exactly once through each vertex of $G$. Such a trail must be a cycle, except when $G$ is the graph $N_1$. Such a cycle is a \underline{\emph{\color{magenta} Hamiltonian cycle}} and $G$ is a \underline{\emph{\color{magenta} Hamiltonian graph}}. A \underline{\emph{\color{magenta} non-Hamiltonian graph}} $G$ is semi-Hamiltonian if there exists a path passing through every verte$x$.
-		\item \underline{\emph{\color{magenta} Theorem 7A}} \hl{\emph{If G is a simple graph with $n(\geq3)$ vertices, and if $\rho(\nu) + \rho(\nu) \geq n$ for each of non-adjacent vertices $\nu$ and $w$, then $G$ is Hamiltonian}}. \footnote{$\rho$ is referred as "deg"} 
+		\item \underline{\emph{\color{magenta} Theorem 7A}} \hl{\emph{If G is a simple graph with $n(\geq3)$ vertices, and if $\rho(\nu) + \rho(\nu) \geq n$ for each of non-adjacent vertices $\nu$ and $w$, then $G$ is Hamiltonian}}. \footnote{$\rho$ is referred as "deg" in 4th edition} 
 		\item \underline{\emph{\color{magenta} Dirac 1952}} \hl{\emph{If $G$ is a simple graph with $n(\geq3)$ vertices, and if $\rho(\nu) \geq \frac{1}{2} n$ for every vertex $\nu$ then $G$ is Hamiltonian.}}
 \end{itemize}
 
@@ -1273,19 +1273,82 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 \end{itemize}
 
 \section*{12: Planar graphs}
+\begin{itemize}
+		\item A \underline{\emph{\color{magenta} plane graph}} is a graph drawn in the plane in such a way that no two edges intersect geometrically except at a vertex to which they are both incident. \begin{small} a planar graph is one which is isomorphic to a plane graph.\end{small}
+				\item \underline{\emph{\color{magenta} Theorem 12A}}: \emph{\hl{$K_5$, and $K_{3,3}$ are non-planer}}
+				\item Two graphs are \underline{\emph{\color{magenta} homomorphic}} if they can both be obtained from the same graph by inserting new vertices of degree two into its edges.
+				\item \underline{\emph{\color{magenta} Theorem 12B}}: \emph{A graph is \hl{planar} iff it contains \hl{no subgraph homeomorphic to $K_5$, and $K_{3,3}$}}
+				\item \underline{\emph{\color{magenta} Theorem 12C}}: \emph{A graph is \hl{planar} iff it contains \hl{no subgraph which contractible to $K_5$, and $K_{3,3}$}}
 
+
+\end{itemize}
 \section*{Exercise 12}
-
+\begin{itemize}
+	\item[(12c)] {\color{blue}Prove that the Petersen graph is non-planar
+					\begin{itemize}
+							\item[(i)] by using Theorem 12B,
+							\item[(ii)] by using Theorem 12C.
+						\end{itemize}
+			}
+	\item[(12d)] {\color{blue} Give an example of
+					\begin{itemize}
+						\item[(i)] a non-planar graph which is not homeomorphic to $K_5$ or $K_{3,3}$,
+						\item[(ii)] a non-planar graph which is not contractible to $K_5$ or $K_{3,3}$.								
+					\end{itemize}
+					Why does the existence of these graphs not contradict Theorems 12B and 12C?
+			
+			}
+\end{itemize}
 \section*{13: Euler's formula for plane graphs}
-
+\begin{itemize}
+		\item If $x$ is a point of the plane disjoint from $G$, the \underline{\emph{\color{magenta}face}} of $(G)$ \underline{\emph{color{magenta}containing $x$}} is the set of all points of the plane which can be reached from $x$ by a Jordan curve all of whose points are disjoint from $G$.
+		\item \underline{\emph{\color{magenta}Theorem 13A (Euler)}}: Let $G$ be a connected plane graph, and let $n, m$ and $f$ denote respectively the number of vertices, edges and faces of $G$, then \hl{$n - m + f = 2$}.
+		\item \underline{\emph{\color{magenta}Corollary 13B}}: \emph{let $G$ be a \hl{polyhedral} graph, then with above notation \hl{$n - m + f = 2$}}.
+		\item \underline{\emph{\color{magenta}Corollary 13C}}: \emph{let $G$ be a \hl{plane} graph with $n$ vertices, $m$ edges, $f$ faces and $k$ components, then \hl{$n - m + f = k + 1$}}.
+		\item \underline{\emph{\color{magenta}Corollary 13D}}: \emph{(i) If $G$ is a connected simple planar graph with $n(\geq 3)$ vertices and $m$ edges, then $m \leq 3n -6$}\\ (ii) If, in addition, $G$ has no triangles, then $m \leq 2n -4$.
+		\item \underline{\emph{\color{magenta}Corollary 13E}}: \emph{$K_5$ and $K_{3,3}$ are non-planar}.
+		\item \underline{\emph{\color{magenta}Corollary 13F}}: \emph{Every simple planar graph contains a vertex whose degree is at most five}.
+		\item The \underline{\emph{\color{magenta}thickness}} of a graph $t(G)$ is the smallest number of planar graphs which can be superimposed to form $G$.
+		\item \underline{\emph{\color{magenta}Theorem 13G}}: \emph{Let $G$ be a simple graph with $n(\geq 3)$ vertices and $m$ edges, then the thickness $t(G)$ of $G$ satisfies the following inequalities:
+						$$t(G) \geq \big \lceil \frac{m}{3n -6} \big \rceil; \ \ \ \ \ t(G) \geq \big \lfloor \frac{m + 3n -7}{3n -6} \big \rfloor $$
+				}		
+\end{itemize}
 \section*{Exercise 13}
+\begin{itemize}
+	\item[(13c)] {\color{blue}
+			\begin{itemize}
+				\item[(i)] Use Euler's formula to prove that if $G$ is a connected plane graph of girth 5 then, with the above notation, $m \leq \frac{5}{3} (n-2)$.
+				\item[(ii)] Deduce the Petersen graph is non-planar.
+				\item[(iii)] Obtain an inequality, generalizing that in part (i), for connected plane graphs of girth $r$.
+			\end{itemize}
+	}
+	\item[(13h)] {\color{blue} Find the thickness of
+			\begin{itemize}
+				\item[(i)] the Petersen graph.
+				\item[(ii)] the 4-cube $Q_4$.
+			\end{itemize}
+			}
+\end{itemize}
 
 \section*{14: Graphs on other surfaces}
 
 \section*{Exercise 14}
 
 \section*{15: Dual graphs}
-
+\begin{itemize}
+	\item \underline{\emph{\color{magenta}Geometric-dual $G^*$}} of graph $G$ constructed as follows:
+			\begin{itemize}
+				\item[(i)] inside each face $F_i$ of $G$ we choose a point $v_i^*$ --- these points are the vertices of $G^*$,
+				\item[(ii)] corresponding to each edge $e$ of $G$ we draw a line $e^*$ which crosses $e$ (but no other edge of $G$), and joins the vertices $v_i^*$ which lie in the faces $F_i$ adjoining $e$ --- these lines are the edges of $G^*$.
+			\end{itemize}
+	\item \underline{\emph{\color{magenta}Lemma 15A}}: \emph{Let $G$ be a plane connected graph with $n$ vertices, $m$ edges and $f$ faces, and let its geometric-dual $G^*$ have $n^*$ vetices. $m^*$ edges and $f^*$ faces. Then $n^* = f, m^* = m, \text{and} f^* = n$}.
+	\item \underline{\emph{\color{magenta}Theorem 15B}}: \emph{\hl{Let $G$ be a plane connected graph. Then $G^{**}$ is isomorphic to $G$}}.
+	\item \underline{\emph{\color{magenta}Theorem 15C}}: \emph{\hl{Let $G$ be a planar and $G^*$ be a geometric-dual of $G$. Then a set of edges in $G$ forms a cycle in $G$ iff the corresponding set of edges of $G^*$ forms a cutset in $G^*$}}.
+	\item \underline{\emph{\color{magenta}Corollary 15D}}: \emph{A set of edges of $G$ forms a cutset in $G$ iff the corresponding set of edges of $G^*$ forms a cycle in $G^*$.
+	\item The \underline{\emph{\color{magenta}abstract-dual}} $G^*$ of a graph $G$ if there is a one-one correspondance between the edges of $G$ and those of $G^*$ with the property that a set of edges of $G$ forms a cycle in $G$ iff the corresponding set of edges of $G^*$ forms a cutset in $G^*$}.
+	\item \underline{\emph{\color{magenta}Theorem 15E}}: \emph{\hl{If $G^*$ is an abstact-dual of $G$, then $G$ is an abstact-dual of $G^*$}}.
+	\item \underline{\emph{\color{magenta}Theorem 15F}}: \emph{\hl{A graph is planar iff it has an abstract-dual}}.
+\end{itemize}
 \section*{Exercise 15}
 
 \section*{16: Infinite graphs}
