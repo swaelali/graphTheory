@@ -88,10 +88,10 @@ of whose edges belongs to $E(G)$.
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
                     semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] (A)                    {};
-  					 \node[state]         (B) [right of=A] {};
-  					 \node[state]         (C) [below of=B] {};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+ 					 \node[vert] (A)                    {};
+  					 \node[vert]         (B) [right of=A] {};
+  					 \node[vert]         (C) [below of=B] {};
  					 \path (A) edge (B)
  					 		 	(B) edge (C)
  					 			(A) edge (C);
@@ -103,10 +103,10 @@ of whose edges belongs to $E(G)$.
 			\centering 				
 			\			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
                     semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] (A)                    {};
-  					 \node[state]         (B) [right of=A] {};
-  					 \node[state]         (C) [below of=B] {};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+ 					 \node[vert] (A)                    {};
+  					 \node[vert]         (B) [right of=A] {};
+  					 \node[vert]         (C) [below of=B] {};
  					 \path (A) edge (B)
  					 		 	(B) edge (C)
  					 			(A) edge (C)
@@ -118,12 +118,12 @@ of whose edges belongs to $E(G)$.
 			\begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,auto,node distance=2.8cm,semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] (A)                    {};
-  					 \node[state]         (B) [right of=A] {};
-  					 \node[state]         (C) [below of=B] {};
-  					 \node[state]         (D) [below of=A] {};
-  					 \node[state]         (E) at ($(D)!0.5!(B)$) {};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=3pt,fill=gray]
+ 					 \node[vert] (A)                    {};
+  					 \node[vert]         (B) [right of=A] {};
+  					 \node[vert]         (C) [below of=B] {};
+  					 \node[vert]         (D) [below of=A] {};
+  					 \node[vert]         (E) at ($(D)!0.5!(B)$) {};
  					 \path
  					 			(A) edge (B)
  					 			(A) edge [bend left] (B)
@@ -141,10 +141,8 @@ of whose edges belongs to $E(G)$.
  					 			(C) edge [bend left] (E)
  					 			(D) edge [bend right] (E)
  					 			(D) edge [bend left] (E);
-					%\draw[semithick,-] (A) to [out=10, in=90,loop] (A);
-					\draw[semithick,-] (A) to [out=100, in=180,loop] (A); 	
+					\draw[semithick,-] (A) to [out=100, in=180,loop] (A);
 					\draw[semithick,-] (B) to [out=10, in=90,loop] (B);
-					%\draw[semithick,-] (B) to [out=100, in=180,loop] (B); 	
 					\draw[semithick,-] (C) to [out=-110, in=-30, loop] (C); 	
 					\draw[semithick,-] (D) to [out=-170, in=-90, loop] (D); 					 			 					 			
 				\end{tikzpicture}
@@ -160,13 +158,13 @@ of whose edges belongs to $E(G)$.
 					\begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.8cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    {};
-  					 \node[state]         (B) [right of=A] {};
-  					 \node[state]         (C) [below left of=A] {};
-  					 \node[state] 		  (D) [below right of=B] {};
-  					 \node[state]		  (E) [below right of=C] {};
-  					 \node[state]		  (F) [below left of=D] {};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+ 					 \node[vert] 			(A)                    {};
+  					 \node[vert]         (B) [right of=A] {};
+  					 \node[vert]         (C) [below left of=A] {};
+  					 \node[vert] 		  (D) [below right of=B] {};
+  					 \node[vert]		  (E) [below right of=C] {};
+  					 \node[vert]		  (F) [below left of=D] {};
   					
  					  \path
  					  			(A) edge (B)
@@ -189,13 +187,13 @@ of whose edges belongs to $E(G)$.
 			\begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.8cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    {};
-  					 \node[state]         (B) [right of=A] {};
-  					 \node[state]         (C) [below left of=A] {};
-  					 \node[state] 		  (D) [below right of=B] {};
-  					 \node[state]		  (E) [below right of=C] {};
-  					 \node[state]		  (F) [below left of=D] {};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+ 					 \node[vert] 			(A)                    {};
+  					 \node[vert]         (B) [right of=A] {};
+  					 \node[vert]         (C) [below left of=A] {};
+  					 \node[vert] 		  (D) [below right of=B] {};
+  					 \node[vert]		  (E) [below right of=C] {};
+  					 \node[vert]		  (F) [below left of=D] {};
   					
  					  \path
  					  			(A) edge (B)
@@ -228,17 +226,17 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 \begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{$a$};
-  					 \node[state]         (B) [below of=A] {$b$};
-  					 \node[state]         (C) [left of=B] 		{$c$};
-  					 \node[state]         (D) [right of=B] 	{$d$};
-					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
-					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
-					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
-  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
-  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
-  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert] 			(A)                    		{$a$};
+  					 \node[vert]         (B) [below of=A] {$b$};
+  					 \node[vert]         (C) [left of=B] 		{$c$};
+  					 \node[vert]         (D) [right of=B] 	{$d$};
+					\node[vert]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[vert]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[vert]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[vert]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[vert]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[vert]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
  					  \path
  					  			(A) edge (B)
  					 			(A) edge (C)
@@ -257,17 +255,17 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
  					 			(I) edge (J);
 				\end{tikzpicture}
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{$a$};
-  					 \node[state]         (B) [right of=A] {$b$};
-  					 \node[state]         (C) [below left=2.5cm and 0.5cm of A] 		{$c$};
-  					 \node[state]         (D) [below right=2.5cm and 0.5cm of B] 	{$g$};
-					\node[state]		  (F) at ($(C)!0.5!(D)$) {$f$};
-					\node[state]		  (E) [above left=0.4cm and 0.4cm of F] {$h$};
-					\node[state]		  (G) [above right=0.4cm and 0.4cm of F] {$d$};															
-					\node[state]		  (H) [below=0.5cm and 0cm of F] {$e$}; 					 
-  					 \node[state]		  (I)  [below right=2.5cm and 0.5cm of C] {$i$};
-  					 \node[state]		  (J)  [below left=2.5cm and 0.5cm of D] {$j$};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert] 			(A)                    		{$a$};
+  					 \node[vert]         (B) [right of=A] {$b$};
+  					 \node[vert]         (C) [below left=2.5cm and 0.5cm of A] 		{$c$};
+  					 \node[vert]         (D) [below right=2.5cm and 0.5cm of B] 	{$g$};
+					\node[vert]		  (F) at ($(C)!0.5!(D)$) {$f$};
+					\node[vert]		  (E) [above left=0.4cm and 0.4cm of F] {$h$};
+					\node[vert]		  (G) [above right=0.4cm and 0.4cm of F] {$d$};															
+					\node[vert]		  (H) [below=0.5cm and 0cm of F] {$e$}; 					 
+  					 \node[vert]		  (I)  [below right=2.5cm and 0.5cm of C] {$i$};
+  					 \node[vert]		  (J)  [below left=2.5cm and 0.5cm of D] {$j$};
  					  \path
  					  (A) edge (B)
  					  (B) edge (D)
@@ -292,15 +290,15 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 \begin{figure}[h!]
 \centering
 \begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{};
- 					 \node[state] 			(B) [right of=A]                   		{};
- 					 \node[state] 			(C) [below of=B]                   		{};
- 					 \node[state] 			(D) [below of=A]                  		{};
- 					 \node[state]          (E) [above left of=A] {};
- 					 \node[state]          (F) [above right of=B] {};
- 					 \node[state]          (G) [below right of=C] {};
- 					 \node[state]          (H) [below left of=D] {};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+ 					 \node[vert] 			(A)                    		{};
+ 					 \node[vert] 			(B) [right of=A]                   		{};
+ 					 \node[vert] 			(C) [below of=B]                   		{};
+ 					 \node[vert] 			(D) [below of=A]                  		{};
+ 					 \node[vert]          (E) [above left of=A] {};
+ 					 \node[vert]          (F) [above right of=B] {};
+ 					 \node[vert]          (G) [below right of=C] {};
+ 					 \node[vert]          (H) [below left of=D] {};
 				\path
 				(A) edge [color=red, very thick] (B)
 				(B) edge [color=red, very thick] (C)
@@ -314,15 +312,15 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 				(C) edge [color=red, very thick] (G);
 \end{tikzpicture}
 \begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{};
- 					 \node[state] 			(B) [right of=A]                   		{};
- 					 \node[state] 			(C) [below of=B]                   		{};
- 					 \node[state] 			(D) [below of=A]                  		{};
- 					 \node[state]          (E) [above left of=A] {};
- 					 \node[state]          (F) [above right of=B] {};
- 					 \node[state]          (G) [below right of=C] {};
- 					 \node[state]          (H) [below left of=D] {};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+ 					 \node[vert] 			(A)                    		{};
+ 					 \node[vert] 			(B) [right of=A]                   		{};
+ 					 \node[vert] 			(C) [below of=B]                   		{};
+ 					 \node[vert] 			(D) [below of=A]                  		{};
+ 					 \node[vert]          (E) [above left of=A] {};
+ 					 \node[vert]          (F) [above right of=B] {};
+ 					 \node[vert]          (G) [below right of=C] {};
+ 					 \node[vert]          (H) [below left of=D] {};
 				\path
 				(A) edge (B)
 				(B) edge (C)
@@ -369,25 +367,25 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 		\begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}[-,auto,node distance=2cm, semithick]
- 				 \tikzstyle{every state}=[fill=black, draw=none,  minimum size=0.1pt]
-			\node[state]  (1) {};
-			\node[state]  (2) [right of=1]{};
-			\node[state]  (3) [right of=2]{};		
-		 	\node[state]  (4) [below of=1]{};
-		 	\node[state]  (5) [below of=2]{};
+ 		\tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+			\node[vert]  (1) {};
+			\node[vert]  (2) [right of=1]{};
+			\node[vert]  (3) [right of=2]{};		
+		 	\node[vert]  (4) [below of=1]{};
+		 	\node[vert]  (5) [below of=2]{};
  	\end{tikzpicture}
  	\caption{(i) Null graph $N_5$}
 	\end{figure}
 	\begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}[-,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
-			\node[state]  (1) {};
-			\node[state]  (2) [below right of=1]{};
-			\node[state]  (3) [below left of=1]{};		
-		 	\node[state]  (4) [below of=2]{};
-		 	\node[state]  (5) [below of=3]{};
-		 	\node[state]  (6) [below=5cm and 0cm of 1]{};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+			\node[vert]  (1) {};
+			\node[vert]  (2) [below right of=1]{};
+			\node[vert]  (3) [below left of=1]{};		
+		 	\node[vert]  (4) [below of=2]{};
+		 	\node[vert]  (5) [below of=3]{};
+		 	\node[vert]  (6) [below=5cm and 0cm of 1]{};
 		
 		 		\foreach \i in {1,...,6}{
 		 		 \foreach \j in {1,...,6}{
@@ -400,13 +398,13 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 		\begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}[-,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
-			\node[state]  (A) {};
-			\node[state]  (B) [right of=A]{};
-			\node[state]  (2) [below of=A]{};
-			\node[state]  (1) [left of=2]{};		
-		 	\node[state]  (3) [below of=B]{};
-		 	\node[state]  (4) [right of=3]{};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+			\node[vert]  (A) {};
+			\node[vert]  (B) [right of=A]{};
+			\node[vert]  (2) [below of=A]{};
+			\node[vert]  (1) [left of=2]{};		
+		 	\node[vert]  (3) [below of=B]{};
+		 	\node[vert]  (4) [right of=3]{};
 		
 		 		\foreach \i in {A,...,B}{
 		 		 \foreach \j in {1,...,4}{
@@ -419,22 +417,22 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 		\begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}[scale=0.8,-,auto,node distance=2cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
-			\node[state]  (A) {};
-			\node[state]  (2) [below of=A]{};
-			\node[state]  (1) [left of=2]{};		
-		 	\node[state]  (3) [right of=2]{};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+			\node[vert]  (A) {};
+			\node[vert]  (2) [below of=A]{};
+			\node[vert]  (1) [left of=2]{};		
+		 	\node[vert]  (3) [right of=2]{};
 		
 		 		 \foreach \j in {1,...,3}{
 		 			\draw  (A) -- (\j);
 		 			}
  	\end{tikzpicture}
  	  \begin{tikzpicture}[scale=.7, semithick]
- 	  \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 	  \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
 \draw (60:2) arc (60:420:20mm);
-    \node[state] (center) at (0,0) {};
+    \node[vert] (center) at (0,0) {};
 \foreach \phi in {1,...,3}{
-    \node[state,fill=white] (v_\phi) at (360/3 * \phi:2cm) {};
+    \node[vert,fill=white] (v_\phi) at (360/3 * \phi:2cm) {};
          \draw (v_\phi) -- (center);
       }
    \end{tikzpicture}
@@ -444,11 +442,11 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 	\begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}[scale=1,-,auto,node distance=2cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
-			\node[state]  (A) {};
-			\node[state]  (B) [right of=A]{};
-			\node[state]  (C) [below of=B]{};		
-		 	\node[state]  (D) [below of=A]{};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+			\node[vert]  (A) {};
+			\node[vert]  (B) [right of=A]{};
+			\node[vert]  (C) [below of=B]{};		
+		 	\node[vert]  (D) [below of=A]{};
 			\path
 				(A) edge (C)
 				(B) edge (D);
@@ -463,13 +461,13 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 \begin{figure}[h!]
 \centering
 	\begin{tikzpicture}[scale=0.6,-,auto,node distance=2cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
-			\node[state]  (A) {};
-			\node[state]  (B) [right of=A]{};
-			\node[state]  (1) [below left of=A]{};		
-		 	\node[state]  (2) [below of=1]{};
-		 	\node[state] (C) [below  right of=B]{};
-		 	\node[state] (D) [below of=C]{};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+			\node[vert]  (A) {};
+			\node[vert]  (B) [right of=A]{};
+			\node[vert]  (1) [below left of=A]{};		
+		 	\node[vert]  (2) [below of=1]{};
+		 	\node[vert] (C) [below  right of=B]{};
+		 	\node[vert] (D) [below of=C]{};
 			
 				\foreach \i in {A,...,D}{
 		 		 \foreach \j in {1,...,2}{
@@ -487,15 +485,15 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 \begin{figure}[h!]
 \centering
 	\begin{tikzpicture}[scale=0.6,-,auto,node distance=2cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=5pt]
-			\node[state]  (A) {};
-			\node[state]  (B) [right of=A]{};			
-			\node[state]  (1) [below left of=A]{};		
-		 	\node[state]  (2) [below of=1]{};
-		 	\node[state] (3) [below of=2] {};
-		 	\node[state] (C) [below  right of=B]{};
-		 	\node[state] (D) [below of=C]{};
-		 	\node[state] (E) [below of=D]{};
+ 		\tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+			\node[vert]  (A) {};
+			\node[vert]  (B) [right of=A]{};			
+			\node[vert]  (1) [below left of=A]{};		
+		 	\node[vert]  (2) [below of=1]{};
+		 	\node[vert] (3) [below of=2] {};
+		 	\node[vert] (C) [below  right of=B]{};
+		 	\node[vert] (D) [below of=C]{};
+		 	\node[vert] (E) [below of=D]{};
 			
 				\foreach \i in {A,...,E}{
 		 		 \foreach \j in {1,...,3}{
@@ -524,11 +522,11 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\begin{figure}[h!]
 			\centering
 				\begin{tikzpicture}[scale=0.4,-,auto,node distance=1.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=5pt]
-						\node[state]  (A) {};
-						\node[state] (B) [below of=A]{};
-						\node[state] (C) [right of=B]{};
-						\node[state] (D) [above of=C]{};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+						\node[vert]  (A) {};
+						\node[vert] (B) [below of=A]{};
+						\node[vert] (C) [right of=B]{};
+						\node[vert] (D) [above of=C]{};
 						
 						\path
 							(A) edge (B)
@@ -537,12 +535,12 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			
  				\end{tikzpicture}
  				\begin{tikzpicture}[scale=0.4,-,auto,node distance=1.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=5pt]
-						\node[state]  (A) {};
-						\node[state] (B) [below left of=A]{};
-						\node[state] (C) [below right of=A]{};
-						\node[state] (D) [below of=B]{};
-						\node[state] (E) [below of=C]{};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+						\node[vert]  (A) {};
+						\node[vert] (B) [below left of=A]{};
+						\node[vert] (C) [below right of=A]{};
+						\node[vert] (D) [below of=B]{};
+						\node[vert] (E) [below of=C]{};
 						
 						\path
 							(A) edge (B)
@@ -553,12 +551,12 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			
  				\end{tikzpicture}
  				\begin{tikzpicture}[scale=0.4,-,auto,node distance=1.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=5pt]
-						\node[state]  (A) {};
-						\node[state] (B) [below left of=A]{};
-						\node[state] (C) [below right of=A]{};
-						\node[state] (D) [below of=B]{};
-						\node[state] (E) [below of=C]{};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+						\node[vert]  (A) {};
+						\node[vert] (B) [below left of=A]{};
+						\node[vert] (C) [below right of=A]{};
+						\node[vert] (D) [below of=B]{};
+						\node[vert] (E) [below of=C]{};
 						
 						\path
 							(A) edge (B)
@@ -573,15 +571,15 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\begin{figure}[h!]
 			\centering
 \begin{tikzpicture}[scale=.8,-,>=stealth',shorten >=1pt,auto,node distance=1.2cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{};
- 					 \node[state] 			(B) [right of=A]                   		{};
- 					 \node[state] 			(C) [below of=B]                   		{};
- 					 \node[state] 			(D) [below of=A]                  		{};
- 					 \node[state]          (E) [above left of=A] {};
- 					 \node[state]          (F) [above right of=B] {};
- 					 \node[state]          (G) [below right of=C] {};
- 					 \node[state]          (H) [below left of=D] {};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+ 					 \node[vert] 			(A)                    		{};
+ 					 \node[vert] 			(B) [right of=A]                   		{};
+ 					 \node[vert] 			(C) [below of=B]                   		{};
+ 					 \node[vert] 			(D) [below of=A]                  		{};
+ 					 \node[vert]          (E) [above left of=A] {};
+ 					 \node[vert]          (F) [above right of=B] {};
+ 					 \node[vert]          (G) [below right of=C] {};
+ 					 \node[vert]          (H) [below left of=D] {};
 				\path
 				(A) edge (B)
 				(B) edge (C)
@@ -627,7 +625,7 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 		\item If $G$ is connected, its \underline{\emph{\color{magenta} edge connectivity}} $\lambda (G)$ is the size of the smallest cutset in $G$. Thus $\lambda (G)$ is the minimum number of edges that we need to delete in order to disconnect $G$.
 		\item If $G$ is connected and not a complete graph, its \underline{\emph{\color{magenta} vertex connectivity}} $\mathcal{K}(G)$ is the size of the smallest separating set in $G$. Thus $\mathcal{K}(G)$ is the minimum number of vertices that we need to delete in order to disconnect $G$.
 \end{itemize}
-
+\clearpage
 \section*{Exercise 5}
 \begin{itemize}
 		\item[(5a)] {\color{blue} In the Petersen graph, find
@@ -642,17 +640,17 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{$a$};
-  					 \node[state]         (B) [below of=A] {$b$};
-  					 \node[state]         (C) [left of=B] 		{$c$};
-  					 \node[state]         (D) [right of=B] 	{$d$};
-					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
-					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
-					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
-  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
-  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
-  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert] 			(A)                    		{$a$};
+  					 \node[vert]         (B) [below of=A] {$b$};
+  					 \node[vert]         (C) [left of=B] 		{$c$};
+  					 \node[vert]         (D) [right of=B] 	{$d$};
+					\node[vert]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[vert]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[vert]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[vert]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[vert]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[vert]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
  					  \path
 							  (A) edge[color=blue, very thick] (B)
  					 			(A) edge [color=blue, very thick] (C)
@@ -676,17 +674,17 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{$a$};
-  					 \node[state]         (B) [below of=A] {$b$};
-  					 \node[state]         (C) [left of=B] 		{$c$};
-  					 \node[state]         (D) [right of=B] 	{$d$};
-					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
-					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
-					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
-  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
-  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
-  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert] 			(A)                    		{$a$};
+  					 \node[vert]         (B) [below of=A] {$b$};
+  					 \node[vert]         (C) [left of=B] 		{$c$};
+  					 \node[vert]         (D) [right of=B] 	{$d$};
+					\node[vert]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[vert]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[vert]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[vert]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[vert]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[vert]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
  					  \path
 							  (A) edge[color=blue, very thick] (B)
 							  (A) edge [color=blue, very thick] (C)
@@ -710,17 +708,17 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{$a$};
-  					 \node[state]         (B) [below of=A] {$b$};
-  					 \node[state]         (C) [left of=B] 		{$c$};
-  					 \node[state]         (D) [right of=B] 	{$d$};
-					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
-					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
-					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
-  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
-  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
-  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert] 			(A)                    		{$a$};
+  					 \node[vert]         (B) [below of=A] {$b$};
+  					 \node[vert]         (C) [left of=B] 		{$c$};
+  					 \node[vert]         (D) [right of=B] 	{$d$};
+					\node[vert]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[vert]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[vert]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[vert]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[vert]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[vert]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
  					  \path
 							  (A) edge (B)
  					 			(A) edge [color=blue, very thick] (C)
@@ -744,17 +742,17 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{$a$};
-  					 \node[state]         (B) [below of=A] {$b$};
-  					 \node[state]         (C) [left of=B] 		{$c$};
-  					 \node[state]         (D) [right of=B] 	{$d$};
-					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
-					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
-					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
-  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
-  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
-  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert] 			(A)                    		{$a$};
+  					 \node[vert]         (B) [below of=A] {$b$};
+  					 \node[vert]         (C) [left of=B] 		{$c$};
+  					 \node[vert]         (D) [right of=B] 	{$d$};
+					\node[vert]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[vert]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[vert]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[vert]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[vert]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[vert]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
  					  \path
 							  (A) edge [color=blue, very thick](B)
  					 			(A) edge [color=blue, very thick] (C)
@@ -778,17 +776,17 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{$a$};
-  					 \node[state]         (B) [below of=A] {$b$};
-  					 \node[state]         (C) [left of=B] 		{$c$};
-  					 \node[state]         (D) [right of=B] 	{$d$};
-					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
-					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
-					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
-  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
-  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
-  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert] 			(A)                    		{$a$};
+  					 \node[vert]         (B) [below of=A] {$b$};
+  					 \node[vert]         (C) [left of=B] 		{$c$};
+  					 \node[vert]         (D) [right of=B] 	{$d$};
+					\node[vert]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[vert]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[vert]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[vert]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[vert]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[vert]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
  					  \path
 							  (A) edge [color=blue, very thick](B)
  					 			(A) edge [color=blue, very thick] (C)
@@ -812,17 +810,17 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{$a$};
-  					 \node[state]         (B) [below of=A] {$b$};
-  					 \node[state]         (C) [left of=B] 		{$c$};
-  					 \node[state]         (D) [right of=B] 	{$d$};
-					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
-					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
-					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
-  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
-  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
-  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert] 			(A)                    		{$a$};
+  					 \node[vert]         (B) [below of=A] {$b$};
+  					 \node[vert]         (C) [left of=B] 		{$c$};
+  					 \node[vert]         (D) [right of=B] 	{$d$};
+					\node[vert]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[vert]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[vert]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[vert]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[vert]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[vert]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
  					  \path
 							  %(A) edge (B)
  					 			%(A) edge  (C)	
@@ -846,17 +844,17 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{$a$};
-  					 \node[state]         (B) [below of=A] {$b$};
-  					 \node[state]         (C) [left of=B] 		{$c$};
-  					 \node[state]         (D) [right of=B] 	{$d$};
-					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
-					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
-					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
-  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
-  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
-  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert] 			(A)                    		{$a$};
+  					 \node[vert]         (B) [below of=A] {$b$};
+  					 \node[vert]         (C) [left of=B] 		{$c$};
+  					 \node[vert]         (D) [right of=B] 	{$d$};
+					\node[vert]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[vert]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[vert]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[vert]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[vert]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[vert]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
  					  \path
 							  %(A) edge (B)
  					 			(A) edge  (C)	
@@ -880,17 +878,17 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\begin{figure}[h!]
 			\centering 				
 			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=2.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
- 					 \node[state] 			(A)                    		{$a$};
-  					 \node[state]         (B) [below of=A] {$b$};
-  					 \node[state]         (C) [left of=B] 		{$c$};
-  					 \node[state]         (D) [right of=B] 	{$d$};
-					\node[state]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
-					\node[state]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
-					\node[state]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
-  					 \node[state]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
-  					 \node[state]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
-  					 \node[state]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert] 			(A)                    		{$a$};
+  					 \node[vert]         (B) [below of=A] {$b$};
+  					 \node[vert]         (C) [left of=B] 		{$c$};
+  					 \node[vert]         (D) [right of=B] 	{$d$};
+					\node[vert]		  (E) [below left=0.5cm and 0.5cm of B] {$e$};
+					\node[vert]		  (F) [below right=0.5cm and 0.5cm of B] {$f$};
+					\node[vert]		  (G) [below=0.5cm and 0cm of F] {$g$}; 					 
+  					 \node[vert]		  (H) [below= 0.5cm and 0.5cm of E] {$h$};
+  					 \node[vert]		  (I)  [below right=3.5cm and 0.5cm of C] {$i$};
+  					 \node[vert]		  (J)  [below left=3.5cm and 0.5cm of D] {$j$};
  					  \path
 							  	(A) edge (B)
  					 			(A) edge  (C)	
@@ -916,11 +914,11 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 	\hsplit
 	\begin{figure}[h!]
 	\begin{tikzpicture}[scale=.7, semithick]
- 	  \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 	  \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
 \draw (60:2) arc (60:420:20mm);
-    %\node[state] (center) at (0,0) {};
+    %\node[vert] (center) at (0,0) {};
 \foreach \phi in {1,...,6}{
-    \node[state,fill=white] (v_\phi) at (360/6 * \phi:2cm) {};
+    \node[vert,fill=white] (v_\phi) at (360/6 * \phi:2cm) {};
          %\draw (v_\phi) -- (center);
       }
    \end{tikzpicture}
@@ -929,11 +927,11 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 
 	\begin{figure}[h!]
 	\begin{tikzpicture}[scale=.7, semithick]
- 	  \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
+ 	  \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
 \draw (60:2) arc (60:420:20mm);
-    \node[state] (center) at (0,0) {};
+    \node[vert] (center) at (0,0) {};
 \foreach \phi in {1,...,7}{
-    \node[state,fill=white] (v_\phi) at (360/7 * \phi:2cm) {};
+    \node[vert,fill=white] (v_\phi) at (360/7 * \phi:2cm) {};
          \draw (v_\phi) -- (center);
       }
    \end{tikzpicture}
@@ -943,18 +941,18 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 	\begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}[scale=.7,-,auto,node distance=1.5cm, semithick]
- 				 \tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=0.1pt]
-			\node[state]  (B) {};
-			\node[state]  (A) [left of=B]{};
-			\node[state]  (C) [right of=B]{};
-			\node[state]  (D) [right of=C]{};
-		 	\node[state]  (3) [below of=B]{};
-			\node[state]  (2) [left of=3]{};		
-			\node[state]  (1) [left of=2]{};
-		 	\node[state]  (4) [right of=3]{};
-		 	\node[state]  (5) [right of=4]{};
-		 	\node[state]  (6) [right of=5]{};
-		 	\node[state]  (7) [right of=6]{};
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+			\node[vert]  (B) {};
+			\node[vert]  (A) [left of=B]{};
+			\node[vert]  (C) [right of=B]{};
+			\node[vert]  (D) [right of=C]{};
+		 	\node[vert]  (3) [below of=B]{};
+			\node[vert]  (2) [left of=3]{};		
+			\node[vert]  (1) [left of=2]{};
+		 	\node[vert]  (4) [right of=3]{};
+		 	\node[vert]  (5) [right of=4]{};
+		 	\node[vert]  (6) [right of=5]{};
+		 	\node[vert]  (7) [right of=6]{};
 		
 		 		\foreach \i in {A,...,D}{
 		 		 \foreach \j in {1,...,7}{
@@ -968,23 +966,23 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 	\begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=.8cm, semithick]
-			\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
- 					 \node[state] 			(A)                    		{};
- 					 \node[state] 			(B) [right of=A]                   		{};
- 					 \node[state] 			(C) [below of=B]                   		{};
- 					 \node[state] 			(D) [below of=A]                  		{};
- 					 \node[state]          (E) [above left of=A] {};
- 					 \node[state]          (F) [above right of=B] {};
- 					 \node[state]          (G) [below right of=C] {};
- 					 \node[state]          (H) [below left of=D] {};
-					 \node[state]          (I) [above left of=E] {};
- 					 \node[state]          (J) [above right of=F] {};
- 					 \node[state]          (K) [below right of=G] {};
- 					 \node[state]          (L) [below left of=H] {};
-					 \node[state]          (M) [above left of=I] {};
- 					 \node[state]          (N) [above right of=J] {};
- 					 \node[state]          (O) [below right of=K] {};
- 					 \node[state]          (P) [below left of=L] {};
+			\tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+ 					 \node[vert] 			(A)                    		{};
+ 					 \node[vert] 			(B) [right of=A]                   		{};
+ 					 \node[vert] 			(C) [below of=B]                   		{};
+ 					 \node[vert] 			(D) [below of=A]                  		{};
+ 					 \node[vert]          (E) [above left of=A] {};
+ 					 \node[vert]          (F) [above right of=B] {};
+ 					 \node[vert]          (G) [below right of=C] {};
+ 					 \node[vert]          (H) [below left of=D] {};
+					 \node[vert]          (I) [above left of=E] {};
+ 					 \node[vert]          (J) [above right of=F] {};
+ 					 \node[vert]          (K) [below right of=G] {};
+ 					 \node[vert]          (L) [below left of=H] {};
+					 \node[vert]          (M) [above left of=I] {};
+ 					 \node[vert]          (N) [above right of=J] {};
+ 					 \node[vert]          (O) [below right of=K] {};
+ 					 \node[vert]          (P) [below left of=L] {};
 
 
 					 \path
@@ -1153,11 +1151,11 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\begin{figure}[h!]
 				\centering
 				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
-						\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
-						\node[state] 		(A)                    		{$a$};
- 					 	\node[state] 			(B) [below of=A]            {$b$};
- 					 	\node[state] 			(C) [right of=B]            	{$c$};
- 					 	\node[state] 			(D) [right of=A]            {$d$};
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(A)                    		{$a$};
+ 					 	\node[vert] 			(B) [below of=A]            {$b$};
+ 					 	\node[vert] 			(C) [right of=B]            	{$c$};
+ 					 	\node[vert] 			(D) [right of=A]            {$d$};
 						\node [below right of=B]		{($i$)};
  				  \path
 					 (A) edge (B)
@@ -1167,12 +1165,12 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 					 (B) edge (C);
 				\end{tikzpicture}				
 				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
-						\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
-						\node[state] 		(C)                    		{$c$};
- 					 	\node[state] 			(A) [above left of=C]            {$a$};
-						\node[state] 			(D) [above right of=C]            	{$d$};
-						\node[state] 			(E) [below right of=C]            {$e$};
- 					 	\node[state] 			(B) [below left of=C]            {$b$};
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(C)                    		{$c$};
+ 					 	\node[vert] 			(A) [above left of=C]            {$a$};
+						\node[vert] 			(D) [above right of=C]            	{$d$};
+						\node[vert] 			(E) [below right of=C]            {$e$};
+ 					 	\node[vert] 			(B) [below left of=C]            {$b$};
 						\node [below right of=B]		{($ii$)};
  				  \path
 					 (A) edge (C)
@@ -1187,12 +1185,12 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\centering
 	\item {\color{blue} Find the fundamental sets of cycles and cutsets of the graph if the following figure, associated with the spanning tree shown}	
 					\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
-						\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
-						\node[state] 		(E)                    		{$e$};
- 					 	\node[state] 			(A) [below left=1.5cm of E]            {$a$};
-						\node[state] 			(D) [below right=1.5cm of E]            	{$d$};
-						\node[state] 			(C) [below left=1.5cm and 0.4cm of D]            {$c$};
- 					 	\node[state] 			(B) [below right=1.5cm and 0.4cm of A]            {$b$};
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(E)                    		{$e$};
+ 					 	\node[vert] 			(A) [below left=1.5cm of E]            {$a$};
+						\node[vert] 			(D) [below right=1.5cm of E]            	{$d$};
+						\node[vert] 			(C) [below left=1.5cm and 0.4cm of D]            {$c$};
+ 					 	\node[vert] 			(B) [below right=1.5cm and 0.4cm of A]            {$b$};
 				
 						\path
 							(E) edge (A)
@@ -1231,13 +1229,13 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 	\begin{figure}[h!]
 				\centering
 				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
-						\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
-						\node[state] 		(5)                    		{$5$};
-						\node[state] 			(4) [below of=5]            {$4$};
- 					 	\node[state] 			(2) [right of=4]            	{$2$};
- 					 	\node[state] 			(1) [left of=4]            {$1$};
- 					 	\node[state] 			(6) [left of=1]            {$6$};
- 					 	\node[state] 			(3) [below of=4]            {$3$};
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(5)                    		{$5$};
+						\node[vert] 			(4) [below of=5]            {$4$};
+ 					 	\node[vert] 			(2) [right of=4]            	{$2$};
+ 					 	\node[vert] 			(1) [left of=4]            {$1$};
+ 					 	\node[vert] 			(6) [left of=1]            {$6$};
+ 					 	\node[vert] 			(3) [below of=4]            {$3$};
  				  \path
 					 (5) edge (4)
 			 		 (4) edge (3)
@@ -1247,13 +1245,13 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 				\end{tikzpicture}	
 
 				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
-						\tikzstyle{every state}=[fill=white, draw=black, text=black,  minimum size=3pt]
-						\node[state] 		(2)                    		{$2$};
-						\node[state] 			(4) [right of=2]            {$4$};
- 					 	\node[state] 			(3) [above left of=2]            	{$3$};
- 					 	\node[state] 			(1) [above right of=4]            {$1$};
- 					 	\node[state] 			(6) [below right of=4]            {$6$};
- 					 	\node[state] 			(5) [below left of=2]            {$5$};
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(2)                    		{$2$};
+						\node[vert] 			(4) [right of=2]            {$4$};
+ 					 	\node[vert] 			(3) [above left of=2]            	{$3$};
+ 					 	\node[vert] 			(1) [above right of=4]            {$1$};
+ 					 	\node[vert] 			(6) [below right of=4]            {$6$};
+ 					 	\node[vert] 			(5) [below left of=2]            {$5$};
  				  \path
 					 (5) edge (2)
 			 		 (4) edge (2)
