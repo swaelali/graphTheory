@@ -39,10 +39,9 @@
 	\includegraphics[scale=0.5]{figures/graphUion.png}
 	\caption{Each of $G_1$ and $G_2$ is a component of $G_1 \cup G_2$}
 	\end{figure}
-\item Two vertices $v$ and $w$ of a graph $G$ are \underline{\emph{\color{magenta} adjacent}} if there is an edge $vw$ joining them, and the vertices $v$ and $w$ are then \underline{\emph{\color{magenta} incident}} with such an edge. Similarly, two distinct edges e and/are adjacent if they have a vertex in common.
+\item Two vertices $v$ and $w$ of a graph $G$ are \underline{\emph{\color{magenta} adjacent}} if there is an edge $vw$ joining them, and the vertices $v$ and $w$ are then \underline{\emph{\color{magenta} incident}} with such an edge. Similarly, two distinct edges $e$ and $f$ are adjacent if they have a vertex in common.
 \item The \underline{\emph{\color{magenta} degree}} of a vertex $v$ of $G$ is the number of edges incident with $v$, and is written $deg(v)$. \emph{Loop}-edge increase node-degree by 2. vertex of degree 0 is an \underline{\emph{\color{magenta} isolated vertex}} and a vertex of degree 1 is an \underline{\emph{\color{magenta} end-vertex}}.
-\item \underline{\emph{\color{magenta}Handshaking lemma}}; in any graph the sum of all the vertex-degrees is an even number - in
-fact, twice the number of edges, since each edge contributes exactly 2 to the sum.
+\item \underline{\emph{\color{magenta}Handshaking lemma}}; in any graph the sum of all the vertex-degrees is an even number - in fact, twice the number of edges, since each edge contributes exactly 2 to the sum.
 \item A \underline{\emph{\color{magenta}subgraph}} of a graph $G$ is a graph, each of whose vertices belongs to $V(G)$ and each
 of whose edges belongs to $E(G)$.
 \item \underline{\emph{\color{magenta} Matrix representation}} one way to represent graph is by its \textbf{adjacency matrix} $A$, and its \textbf{incidence matrix} $M$ as follows;
@@ -341,7 +340,7 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 
 \section*{3: Examples of graphs}
 \begin{itemize}
-	\item \underline{\emph{\color{magenta} Null graphs}}, a graph whose edge-set is empty. \underline{\emph{\color{magenta} Complete graph}}, a simple graph in which each pair of distinct vertices are adjacent, in this case $k$-vertex must has $n(n-1)/2$ degree as $n$ the total number of vertices.
+	\item \underline{\emph{\color{magenta} Null graphs}}, a graph whose edge-set is empty. \underline{\emph{\color{magenta} Complete graph}}, a simple graph in which each pair of distinct vertices are adjacent, in this case $k$-vertex must has $n(n-1)/2$ edges as $n$ the total number of vertices.
 	\item \underline{\emph{\color{magenta} Regular graph}}, a graph in which each vertex has the same degree. \textbf{Platonic graphs}, formed from the vertices and edges of the five regular (Platonic) solids - the tetrahedron, octahedron, cube.
 	\item \underline{\emph{\color{magenta}Bipartite graph}}, If the vertex set of a graph G can be split into two disjoint sets A and B so that each edge of G joins a vertex of A and a vertex of B.  A \textbf{complete bipartite graph} is a bipartite graph in which each vertex in A is joined to each vertex in B by just one edge.
 	\item \underline{\emph{\color{magenta} Cubes}}, the $k$-cube $Q_k$ is the graph whose vertices correspond to the sequences ($a_1, a_2, \cdots, a_k$ ), where each $a_i = 0 $ or $1$, and whose edges join those sequences that differ in just one place. You should check that $Q_k$ has $2^{k}$ vertices and $k 2^{k-1}$ edges, and is regular of degree $k$.\\
@@ -1022,6 +1021,7 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 				
 	\end{tikzpicture}
 	\caption{(iv) $\mathcal{K}{(Q_{4})} = 3$ and $\lambda(Q_4) = 8$}
+	\label{fig_5c_cube}
 	\end{figure}
 	%\clearpage
 
@@ -1035,7 +1035,7 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 
 \section*{6: Eulerian graphs}
 \begin{itemize}
-		\item A connected graph $G$ is \underline{\emph{\color{magenta} Eulerian}} if there exists a closed trial containing every edge of $G$. Such trial is an \underline{\emph{\color{magenta} Eulerian trial}}. A non-Eulerian graph is \underline{\emph{\color{magenta} semi-Eulerian}} if there exists a trail containing every edge of $G$.
+		\item A connected graph $G$ is \underline{\emph{\color{magenta} Eulerian}} if there exists a \hl{closed trial} containing every edge of $G$. Such trial is an \underline{\emph{\color{magenta} Eulerian trial}}. A non-Eulerian graph is \underline{\emph{\color{magenta} semi-Eulerian}} if there exists a \hl{trail} containing every edge of $G$.
 		\item \underline{\emph{\color{magenta} Lemma 6a}}: \emph{If $G$ is a graph in which the degree of each vertex is at least 2, then G contains a cycle.}
 		\\
 		\item \underline{\emph{\color{magenta} Theorem 6b}}: \hl{\emph{A connected graph $G$ is Eulerian if and only if the degree of each vertex of G is even.}}
@@ -1049,44 +1049,55 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 				\end{itemize}
 				}
 \end{itemize}
-
+\clearpage
 \section*{Exercise 6}
 \begin{itemize}
 		\item[(6a)] {\color{blue} Which of the following graphs are Eulerian? semi-Eulerian?
 				\begin{itemize}
-						\item the complete graph $K_5$.
-						\item the complete bipartite graph $k_{4,3}$.
-						\item the graph of cube.
-						\item the graph of octahedron.
-						\item the Petersen graph.
+						\item the complete graph $K_5$. {\color{black} \underline{Ans.} \textit{"Eulerian", since all nodes has even degree.}}
+						\item the complete bipartite graph $k_{4,3}$. \\ {\color{black} \underline{Ans.} \textit{ "Semi-Eulerian"}}
+						\item the graph of cube. \\ {\color{black} \underline{Ans.} \textit{"Semi-Eulerian"}}
+						\item the graph of octahedron.\\ {\color{black} \underline{Ans.} \textit{ "Eulerian"}}
+						\item the Petersen graph. \\ {\color{black} \underline{Ans.} \textit{"Semi-Eulerian"}}
 				\end{itemize}
 				}
 			\hsplit
 		\item[(6b)] {\color{blue} 			
 				\begin{itemize}
-						\item For which values of $n$ is $K_n$ Eulerian?
-						\item Which complete bipartite graphs are Eulerian?
-						\item Which Platonic graphs are Eulerian?
-						\item For which values of $n$ is the wheel $W_n$ Eulerian?
-						\item For which values of $k$ the $k-$cube $Q_n$ Eulerian?
+						\item For which values of $n$ is $K_n$ Eulerian?  \\ {\color{black} \underline{Ans.} \textit{ For $n$ is \underline{odd}, that always gives an even degree complete graph.}}
+						\item Which complete bipartite graphs are Eulerian?  \\ {\color{black} \underline{Ans.} \textit{$ \{K_{n,m} \vert n,m \text{ are even}  \} $}}
+						\item Which Platonic graphs are Eulerian?  \\ {\color{black}
+						\begin{figure}[h!]
+						\centering
+						\begin{tabular}{l|cc}
+						Graph & \emph{Hamiltonian} & \emph{Eulerian} \\
+						\hline
+						tetrahedral & yes & no\\
+						\hl{octahedral} & yes & yes\\
+						icosahedral & yes & no\\
+						cubical  & yes & no\\
+						dodecahedral & yes & no\\			
+						\end{tabular}
+						\end{figure}												
+						}\\
+						{\color{magenta} \emph{The next column shows how  \underline{Mathemtica} software helps with drawing all graphs mentioned in the last table.} } 
+						\begin{figure}
+						\centering
+						\includegraphics[scale=0.8]{figures/platonic_graphs.png}
+						\end{figure}
+						\item For which values of $n$ is the wheel $W_n$ Eulerian? \\ {\color{black} \underline{Ans.} \textit{$ W_{n} $ is never be \emph{Eulerian}.}}
+						\item For which values of $k$ the $k-$cube $Q_n$ Eulerian? \\ {\color{black} \underline{Ans.} \textit{$ \{k \vert k \text{ is even}  \} $}}
 				\end{itemize}
 				}
 			\hsplit
-		\item[(6c)] {\color{blue} Let $G$ a connected graph with $k(>0)$ vertices of odd degree.
-				\begin{itemize}
-						\item[(i)] Show that the minimum number of trials, which have no edges in common add which together include every edge of $G$, is $\frac{1}{2}k$.
-						\item[(ii)] How many continuous pen-strokes are needed to draw the diagram in Figure without repeating any line?
-						\begin{figure}[h!]
-							
-						\end{figure}
-				\end{itemize}
+		\item[(6c)] {\color{blue} Let $G$ a connected graph with $k(>0)$ vertices of odd degree. Show that the minimum number of trials, which have no edges in common add which together include every edge of $G$, is $\frac{1}{2}k$.
 				}
 \end{itemize}
 
 \section*{7: Hamiltonian graphs}
 \begin{itemize}
-		\item a closed trail passing exactly once through each vertex of $G$. Such a trail must be a cycle, except when $G$ is the graph $N_1$. Such a cycle is a \underline{\emph{\color{magenta} Hamiltonian cycle}} and $G$ is a \underline{\emph{\color{magenta} Hamiltonian graph}}. A \underline{\emph{\color{magenta} non-Hamiltonian graph}} $G$ is semi-Hamiltonian if there exists a path passing through every verte$x$.
-		\item \underline{\emph{\color{magenta} Theorem 7A}} \hl{\emph{If G is a simple graph with $n(\geq3)$ vertices, and if $\rho(\nu) + \rho(\nu) \geq n$ for each of non-adjacent vertices $\nu$ and $w$, then $G$ is Hamiltonian}}. \footnote{$\rho$ is referred as "deg" in 4th edition} 
+		\item a closed trail passing exactly once through each vertex of $G$. Such a trail must be a cycle, except when $G$ is the graph $N_1$. Such a cycle is a \underline{\emph{\color{magenta} Hamiltonian cycle}} and $G$ is a \underline{\emph{\color{magenta} Hamiltonian graph}}. A non-Hamiltonian graph $G$ is  \underline{\emph{\color{magenta}semi-Hamiltonian}} if there exists a path passing through every verte$x$.
+		\item \underline{\emph{\color{magenta} Theorem 7A}} \hl{\emph{If G is a simple graph with $n(\geq3)$ vertices, and if $\rho(\nu) + \rho(w) \geq n$ for each of non-adjacent vertices $\nu$ and $w$, then $G$ is Hamiltonian}}. \footnote{$\rho$ is referred as "deg" in 4th edition} 
 		\item \underline{\emph{\color{magenta} Dirac 1952}} \hl{\emph{If $G$ is a simple graph with $n(\geq3)$ vertices, and if $\rho(\nu) \geq \frac{1}{2} n$ for every vertex $\nu$ then $G$ is Hamiltonian.}}
 \end{itemize}
 
@@ -1094,20 +1105,44 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 \begin{itemize}
 		\item[(7a)] {\color{blue} Which of the following graphs are Hamilitonain? semi-Hamiltonian?
 			\begin{itemize}
-				\item[i] the complete graph $K_5$.
-				\item[ii] the complete bipartite graph $K_{5,3}$.
-				\item[iii] the graph of the octahedron.
-				\item[iv] the wheel $W_6$.
-				\item[v] the 4-cube $Q_4$.
+				\item[i] the complete graph $K_5$. \\ {\color{black} \underline{Ans.} "\emph{Hamiltonian}" as \\ $\rho(\nu)+\rho(w)=8 > |V(K_{5})| \ \forall \nu, w \in V(K_{5})$}
+				\item[ii] the complete bipartite graph $K_{5,3}$. \\ {\color{black} \underline{Ans.} "\emph{Semi-Hamiltonian}" as \\ $\rho(\nu)+\rho(w) < |V(K_{5,3})| \ \forall \nu \in \{x_i\} \& w \in \{y_i\}$ as shown in the figure \ref{fig_7_1}, but $\exists$ a trial that goes through all vertices.}
+				\begin{figure}[h!]
+					\color{black}
+					\centering
+					\begin{tikzpicture}[scale=.7,-,auto,node distance=1.5cm, semithick]
+ 				 		\tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
+						\node[vert, color=blue, label=right:$y_1$]  (A) {};
+							\node[vert, color=blue, label=right:$y_2$]  (B) [below of=A]{};
+							\node[vert, color=blue, label=right:$y_3$]  (C) [below of=B]{};
+							\node[vert, color=red, label=left:$x_1$]  (1) [above left of=A]{};
+							\node[vert, color=red, label=left:$x_2$]  (2) [below of=1]{};		
+							\node[vert, color=red, label=left:$x_3$]  (3) [below of=2]{};
+		 					\node[vert, color=red, label=left:$x_4$]  (4) [below of=3]{};
+		 					\node[vert, color=red, label=left:$x_5$]  (5) [below of=4]{};
+		 				
+		 					\foreach \i in {A,...,C}{
+		 		 				\foreach \j in {1,...,5}{
+		 							\draw  (\i) -- (\j);
+		 						}
+		 					}
+ 					\end{tikzpicture}
+					\caption{$K_{5,3}$}		
+					\label{fig_7_1}
+				\end{figure}
+				\item[iii] the graph of the octahedron.\\ {\color{black} \underline{Ans.} "\emph{Hamiltonian}", in fact all Platonic graphs are Hamiltonian} 
+				\item[iv] the wheel $W_6$.\\ {\color{black} \underline{Ans.} "\emph{Hamiltonian}, as we can easily get a path that passing through all vertices exactly once."} 
+				\item[v] the 4-cube $Q_4$.\\ {\color{black} \underline{Ans.} "\emph{Hamiltonian}, as shown in figure \ref{fig_5c_cube}, we can see that $|V(Q_4)| = 16$, while $\rho(\nu) = 4 \forall \nu \in V(Q_4)$}. 
 			\end{itemize}
 			}
 			\hsplit
 	\item[(7b)] {\color{blue}
 			\begin{itemize}
-				\item[i] For which values of $n$ is $K_n$ Hamiltonian?
-				\item[ii] Which complete bipartite graphs are Hamiltonian?
-				\item[iii] Which Platonic graphs are Hamiltonian?
-				\item[iv] For which values of $n$ is the wheel $W_n$ Hamiltonian?
+				\item[i] For which values of $n$ is $K_n$ Hamiltonian? \\ {\color{black} \underline{Ans.} If $n=2$.}
+				\item[ii] Which complete bipartite graphs are Hamiltonian?\\ {\color{black} \underline{Ans.} All $K_{n,n}$.} 
+				\item[iii] Which Platonic graphs are Hamiltonian?\\ {\color{black} \underline{Ans.} All Platonic graphs} 
+				\item[iv] For which values of $n$ is the wheel $W_n$ Hamiltonian?\\ {\color{black} \underline{Ans.} All Wheels.} 
+
 				\item[v] For which values of $k$ if the $k-$cube $Q_n$ Hamiltonian?
 			\end{itemize}	
 			}
