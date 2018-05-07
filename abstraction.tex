@@ -1617,6 +1617,108 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 							\item[(ii)] by using Theorem 12C.
 						\end{itemize}
 			}
+			\underline{Ans. (i)}\\
+			\begin{figure}[h!]
+			\centering 				
+			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert, red, label=above:1] 			(A)                    		{};
+  					 \node[vert, blue, label=right:6]         (B) [below of=A] {};
+  					 \node[vert, blue, label=left:5]         (C) [left of=B] 		{};
+  					 \node[vert, blue, label=right:2]         (D) [right of=B] 	{};
+					\node[vert, label=above:10]		  (E) [below left=0.5cm and 0.5cm of B] {};
+					\node[vert, label=above:7]		  (F) [below right=0.5cm and 0.5cm of B] {};
+					\node[vert, red, label=right:8]		  (G) [below=0.5cm and 0cm of F] {}; 					 
+  					 \node[vert, red, label=left:9]		  (H) [below= 0.5cm and 0.5cm of E] {};
+  					 \node[vert, label=below:4]		  (I)  [below right=2.3cm and 0.5cm of C] {};
+  					 \node[vert, label=below:3]		  (J)  [below left=2.3cm and 0.5cm of D] {};
+ 					 
+					 \draw[dashed, thick, blue] (E) -- (F);
+					 \draw[dashed, thick, blue] (I) -- (J);
+					 \path
+							  (A) edge (B)
+ 					 			(A) edge  (C)
+ 					 			(A) edge (D)
+ 					 			(B) edge  (H)
+ 					 			(B) edge (G)
+ 					 			(D) edge (F)
+ 					 			(F) edge (H)
+ 					 			(C) edge (E)
+ 					 			(E) edge (G)
+ 					 			(C) edge  (I)
+ 					 			(H) edge  (I)
+ 					 			(D) edge (J)
+ 					 			(G) edge (J)
+ 					 			%(F) edge (E)
+ 					 			%(I) edge (J);
+				\end{tikzpicture}
+				\qqaud
+			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=1.8pt,fill=white]
+				 \node[vert,blue, label=above:5] (5) {};
+				 \node[vert,blue, label=above:6] (6) [right of=5] {};
+				 \node[vert,blue, label=above:2] (2) [right of=6] {};
+				 \node[vert, label=left:4] (4) [below of=5] {};
+				 \node[vert, red, label=left:9] (9) [below of=4] {};
+				 \node[vert, red, label=left:1] (1) [right of=9] {};
+				 \node[vert, red, label=left:8] (8) [right of=1] {};
+				 
+				 \node[vert, label=left:3] (3) [below of=2] {};
+				 \node[vert, label=below:7] (7) [above right =0.5cm and 0.5cm of 9] {};
+				 \node[vert, label=below:10] (10) [above left =0.5cm and 0.5cm of 8] {};
+		 		\path
+					(9) edge (4)
+					(4) edge (5)
+					(9) edge (6)
+					(9) edge (7)
+					(7) edge (2)
+					(1) edge (5)
+					(1) edge (6)
+					(1) edge (2)
+					(8) edge (10)
+					(10) edge (5)
+					(8) edge (6)
+					(8) edge (3)
+					(3) edge (2);
+		 \end{tikzpicture}
+			\end{figure}
+			As shown in figure, redrawing the Petersen graph in the left of the figure after removing $3-4$ and $10-7$ edges, to the graph in the right of the figure, demostrates how there is a homomorphism between Petersen graph and $K_{3,3}$.\\
+			\vfill
+			\underline{Ans. (ii)}\\
+			\begin{figure}[h!]
+			\centering 				
+			\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=1.8cm, semithick]
+ 				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill=white]
+ 					 \node[vert] 		(A)                    		{};
+  					 \node[vert]        (B) [below of=A] {};
+  					 \node[vert]        (C) [left of=B] 		{};
+  					 \node[vert]        (D) [right of=B] 	{};
+					 \node[vert]  		(E) [below left=0.5cm and 0.5cm of B] {};
+					 \node[vert]		(F) [below right=0.5cm and 0.5cm of B] {};
+					 \node[vert]		(G) [below=0.5cm and 0cm of F] {}; 					 
+  					 \node[vert]		(H) [below= 0.5cm and 0.5cm of E] {};
+					 \node[vert]	  	(I)  [below right=2.3cm and 0.5cm of C] {};
+  					 \node[vert]		(J)  [below left=2.3cm and 0.5cm of D] {};
+ 					 
+					 \path
+							 (A) edge[red, very thick] (B)
+							  (A) edge  (C)
+ 					 			(A) edge (D)
+ 					 			(B) edge  (H)
+ 					 			(B) edge (G)
+ 					 			(D) edge [red, very thick] (F)
+ 					 			(F) edge (H)
+ 					 			(C) edge [red, very thick] (E)
+ 					 			(E) edge (G)
+ 					 			(C) edge  (I)
+ 					 			(H) edge [red, very thick]  (I)
+ 					 			(D) edge (J)
+ 					 			(G) edge [red, very thick] (J)
+ 					 			(F) edge (E)
+ 					 			(I) edge (J);
+				\end{tikzpicture}
+				\end{figure}
+				Perform edge contractions on edges colored in red. The resulting graph is isomorphic to $K_5$.
 	\item[(12d)] {\color{blue} Give an example of
 					\begin{itemize}
 						\item[(i)] a non-planar graph which is not homeomorphic to $K_5$ or $K_{3,3}$,
