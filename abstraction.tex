@@ -1132,7 +1132,7 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 				\end{figure}
 				\item[iii] the graph of the octahedron.\\ {\color{black} \underline{Ans.} "\emph{Hamiltonian}", in fact all Platonic graphs are Hamiltonian} 
 				\item[iv] the wheel $W_6$.\\ {\color{black} \underline{Ans.} "\emph{Hamiltonian}, as we can easily get a path that passing through all vertices exactly once."} 
-				\item[v] the 4-cube $Q_4$.\\ {\color{black} \underline{Ans.} "\emph{Hamiltonian}, as shown in figure \ref{fig_5c_cube}, we can see that $|V(Q_4)| = 16$, while $\rho(\nu) = 4 \forall \nu \in V(Q_4)$}. 
+				\item[v] the 4-cube $Q_4$.\\ {\color{black} \underline{Ans.} "\emph{Hamiltonian}, as shown in figure \ref{fig_5c_cube}, we can see that $|V(Q_4)| = 16$, while $\rho(\nu) = 4, \forall \nu \in V(Q_4)$}. 
 			\end{itemize}
 			}
 			\hsplit
@@ -1180,7 +1180,55 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 
 \section*{Exercise 9}
 	\begin{itemize}
-		\item {\color{blue} Prove that every tree is a bipartie graph.}
+		\item {\color{blue} Prove that every tree is a bipartie graph.}\\
+			Let's first investigate the following example:
+			\begin{figure}[h!]
+				\centering
+				\begin{tikzpicture}[scale=0.3,-,>=stealth',shorten >=1pt, auto, node distance=1cm, semithick]
+					\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+					\node[vert,label=below:1] (a1)	{};
+					\node[vert,fill=black,label=left:2] (a2)	[above of=a1]{};
+					\node[vert,label=left:3] (a3)	[above right of=a2]{};
+					\node[vert,fill=black,label=left:4] (a4)	[below right of=a3]{};
+					\node[vert,label=below:5] (a5)	[below of=a4]{};
+					\node[vert,fill=black,label=left:6] (a6)	[above of=a3]{};
+					\node[vert,label=below:7] (a7)	[above right of=a6]{};
+
+					\node (c1) [right of=a3] {};
+					\node (c2) [right of=c1] {};
+
+					\node[vert,label=left:3] (b3)	[right of=c2]{};
+					\node[vert,label=left:1] (b1)	[above of=b3]{};
+					\node[vert,fill=black,label=right:2] (b2)	[right of=b1]{};
+					\node[vert,fill=black,label=right:4] (b4)	[below of=b2]{};
+					\node[vert,label=left:5] (b5)	[below of=b3]{};
+					\node[vert,fill=black,label=right:6] (b6)	[below of=b4]{};
+					\node[vert,label=left:7] (b7)	[below of=b5]{};
+
+					\draw[->] (c1) -- (c2);
+					\path
+						(a1) edge (a2) 
+						(a2) edge (a3) 
+						(a3) edge (a4) 
+						(a4) edge (a5)
+						(a3) edge (a6)
+						(a6) edge (a7)
+						
+						(b1) edge (b2) 
+						(b2) edge (b3) 
+						(b3) edge (b4) 
+						(b4) edge (b5)
+						(b3) edge (b6)
+						(b6) edge (b7);
+				\end{tikzpicture}
+				\caption{Example, shows how a tree can be treated as a bipartite graph}
+			\end{figure}
+			with the aid of the example demonstrated in the last figure, we can formulate this property,
+			\begin{eqnarray*}
+					\forall u,v,w &\in& V(G),\\ 
+					\text{if } \exists vw, uv &\in& E(G), \text{then } vw \not\in E(G),
+			\end{eqnarray*}
+			that is, for any tree, we can construct two sets/components $x,y$ where there are only edges between vertices from $x$ to vertices from $y$. (definition of bipartite graph)
 		\item {\color{blue} Which trees are complete bipartite graphs?}
 		\item {\color{blue} Draw all the spanning trees in the graph of the following figure}.
 			\begin{figure}[h!]
