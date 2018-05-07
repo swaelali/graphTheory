@@ -288,7 +288,7 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 (ii) As shown in the following figure \ref{notisomorphic}, we cannot find the red part of the first graph as a subset in the second graph.
 \begin{figure}[h!]
 \centering
-\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=1.2cm, semithick]
  				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
  					 \node[vert] 			(A)                    		{};
  					 \node[vert] 			(B) [right of=A]                   		{};
@@ -310,7 +310,8 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 				(A) edge [color=red, very thick] (E)
 				(C) edge [color=red, very thick] (G);
 \end{tikzpicture}
-\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+\qquad
+\begin{tikzpicture}[-,>=stealth',shorten >=1pt,auto,node distance=1.2cm, semithick]
  				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
  					 \node[vert] 			(A)                    		{};
  					 \node[vert] 			(B) [right of=A]                   		{};
@@ -350,7 +351,7 @@ As we can see in the last figure, the sum of all vertex-degrees is $2+2+3+1=8$ w
 	\end{figure}
 	\item \underline{\emph{\color{magenta}Complement of a simple graph}}, if $G$ is a simple graph with vertex set $V(G)$, its complement $\overline{G}$ is the simple graph with vertex set $V(G)$ in which two vertices are adjacent if and only if they are not adjacent in $G$.
 \end{itemize}
-
+\vfill
 \section*{Exercise 3}
 \begin{itemize}
 	\item[(3a)] {\color{blue} Draw the following graphs:
@@ -531,8 +532,8 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 							(A) edge (B)
 							(B) edge (C)
 							(C) edge (D);
-			
  				\end{tikzpicture}
+				\qquad	
  				\begin{tikzpicture}[scale=0.4,-,auto,node distance=1.5cm, semithick]
  				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
 						\node[vert]  (A) {};
@@ -547,8 +548,8 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 							(B) edge (D)
 							(C) edge (E)
 							(D) edge (E);
-			
  				\end{tikzpicture}
+				\qquad	
  				\begin{tikzpicture}[scale=0.4,-,auto,node distance=1.5cm, semithick]
  				 \tikzstyle{vert}=[draw, circle, inner sep=2pt,fill]
 						\node[vert]  (A) {};
@@ -1169,13 +1170,14 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 			\end{itemize}
 				} 
 		\item \underline{\emph{\color{magenta} Corollary 9B}} \emph{If $G$ be a forest with $n$ vertices and $k$ components, then $G$ has $n-k$ edges.}
-\item \begin{small} Given any connected graph $G$, we can choose a cycle and remove any one of its edges, and the resulting graph remains connected. If we repeat this procedure until there are no cycles left. The graph that remains is a tree that connects all the vertices of $G$. It is called a \underline{\emph{\color{magenta} spanning tree}} of $G$. Generally, if $G$ is an arbitrary graph with $n$ vertices, $m$ edges and $k$ compopnents, then we can carry out this procedure on each component of $G$. The result is	called a \underline{\emph{\color{magenta} spanning forest}}, and the total number of edges removed in this process is the	cycle rank of $G$, denoted by $\gamma(G)$. the cutset rank of $G$ to be the number of edges in a spanning forest, denoted by $\xi(G) = n - k$ \end{small}
+\item \begin{small} Given any connected graph $G$, we can choose a cycle and remove any one of its edges, and the resulting graph remains connected. If we repeat this procedure until there are no cycles left. The graph that remains is a tree that connects all the vertices of $G$. It is called a \underline{\emph{\color{magenta} spanning tree}} of $G$. Generally, if $G$ is an arbitrary graph with $n$ vertices, $m$ edges and $k$ components, then we can carry out this procedure on each component of $G$. The result is	called a \underline{\emph{\color{magenta} spanning forest}}, and the total number of edges removed in this process is the \underline{\emph{\color{magenta} cycle rank}} of $G$, denoted by $\gamma(G) = m - n + k$. the cutset rank of $G$ to be the number of edges in a spanning forest, denoted by $\xi(G) = n - k$ \end{small}
 		\item \underline{\emph{\color{magenta} Theorem 9C}} \emph{If $T$ is any spanning forest of a graph $G$, then
 			\begin{itemize}
 				\item[(i)] every cutset of $G$ has an edge in common with $T$.
 				\item[(ii)] every cutset of $G$ has an edge in common with the complement of $T$.
 			\end{itemize}
 		}
+		\item For $T$ and $G$ in last theorem, if we add to $T$ any edge of $G$ not contained in $T$, then by statment ($vi$) in theorem (9A) we get a unique cycle. The set of all cycles formed in this way is called \underline{\emph{\color{magenta} fundamental set of cycles}} associated with $T$. Note, if $T$ is spanning tree of $G$, then the \emph{fundamental set of cycles} of $T$ is equal to \emph{cycle rank} of $G$.
 \end{itemize}
 
 \section*{Exercise 9}
@@ -1228,17 +1230,48 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 					\forall u,v,w &\in& V(G),\\ 
 					\text{if } \exists vw, uv &\in& E(G), \text{then } vw \not\in E(G),
 			\end{eqnarray*}
-			that is, for any tree, we can construct two sets/components $x,y$ where there are only edges between vertices from $x$ to vertices from $y$. (definition of bipartite graph)
-		\item {\color{blue} Which trees are complete bipartite graphs?}
+			vthat is, for any tree, we can construct two sets/components $x,y$ where there are only edges between vertices from $x$ to vertices from $y$. (definition of bipartite graph)
+			\item {\color{blue} Which trees are complete bipartite graphs?}
+				It is easily to show that $K_{1,n}$, where $n \geq 2$ is a tree and a complete bipartite graph in the same time as shown in the next figure, but $K_{2,2}$ does not, as it has a cycle between its edges, as shown in the same figure,
+
+				\begin{figure}[h!]
+				\centering
+				\begin{tikzpicture}[scale=0.3,-,>=stealth',shorten >=1pt, auto, node distance=1cm, semithick]
+					\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+					\node[vert,label=right:1] (a1)	{};
+					\node[vert,label=right:2] (a2)	[below of=a1]{};
+					\node (a3)	[below of=a2]{$\vdots$};
+					\node[vert,label=right:$n$] (an)	[below of=a3]{};
+					\node[vert,label=left:$a$] (a) [left of=a2]{};
+					\draw[dashed] (a) -- (an);
+					
+					\node (c1) [right of=a2] {};
+					\node (c2) [right of=c1] {};
+
+					\node[vert,label=left:$a$] (b1) [above right of=c2]{};
+					\node[vert,label=left:$b$] (b2) [below of=b1]{};
+					\node[vert,label=right:$1$] (1) [right of=b1]{};
+					\node[vert,label=right:$2$] (2) [below of=1]{};
+					\path
+						(a) edge (a1)
+						(a) edge (a2)
+						(b1) edge (1) edge (2)
+						(b2) edge (1) edge (2);
+				\end{tikzpicture}
+				\caption{$K_{1,n}, n \geq 2$ is a tree, but not $K_{m,n}, m,n \geq 2$}
+			\end{figure}
+			and in fact, we can embed $K_{2,2}$ in any $K_{m,n}, m,n \geq 2$. That is, our conculsion in the last figure caption.
+
+
 		\item {\color{blue} Draw all the spanning trees in the graph of the following figure}.
 			\begin{figure}[h!]
 				\centering
 				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
 						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
-						\node[vert] 		(A)                    		{$a$};
- 					 	\node[vert] 			(B) [below of=A]            {$b$};
- 					 	\node[vert] 			(C) [right of=B]            	{$c$};
- 					 	\node[vert] 			(D) [right of=A]            {$d$};
+						\node[vert] 		(A)                    		{};
+ 					 	\node[vert] 			(B) [below of=A]            {};
+ 					 	\node[vert] 			(C) [right of=B]            	{};
+ 					 	\node[vert] 			(D) [right of=A]            {};
 						\node [below right of=B]		{($i$)};
  				  \path
 					 (A) edge (B)
@@ -1246,14 +1279,15 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 					 (A) edge (C)
 					 (D) edge (C)
 					 (B) edge (C);
-				\end{tikzpicture}				
+				\end{tikzpicture}		
+				\qquad
 				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
 						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
-						\node[vert] 		(C)                    		{$c$};
- 					 	\node[vert] 			(A) [above left of=C]            {$a$};
-						\node[vert] 			(D) [above right of=C]            	{$d$};
-						\node[vert] 			(E) [below right of=C]            {$e$};
- 					 	\node[vert] 			(B) [below left of=C]            {$b$};
+						\node[vert] 		(C)                    		{};
+ 					 	\node[vert] 			(A) [above left of=C]            {};
+						\node[vert] 			(D) [above right of=C]            	{};
+						\node[vert] 			(E) [below right of=C]            {};
+ 					 	\node[vert] 			(B) [below left of=C]            {};
 						\node [below right of=B]		{($ii$)};
  				  \path
 					 (A) edge (C)
@@ -1263,10 +1297,114 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 					 (B) edge (C)
 					 (E) edge (C);
 				\end{tikzpicture}
-		
+			\end{figure} \\
+			\underline{Ans.} of ($i$)
+			\begin{figure}[h!]
+				\centering
+				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(A)                    		{};
+ 					 	\node[vert] 			(B) [below of=A]            {};
+ 					 	\node[vert] 			(C) [right of=B]            	{};
+ 					 	\node[vert] 			(D) [right of=A]            {};
+ 				  \path
+					 (A) edge (B)
+			 		 %(A) edge (D)
+					 %(A) edge (C)
+					 (D) edge (C)
+					 (B) edge (C);
+				\end{tikzpicture}		
+				\qquad
+				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(A)                    		{};
+ 					 	\node[vert] 			(B) [below of=A]            {};
+ 					 	\node[vert] 			(C) [right of=B]            	{};
+ 					 	\node[vert] 			(D) [right of=A]            {};
+ 				  \path
+					 (A) edge (B)
+			 		 (A) edge (D)
+					 (A) edge (C);
+					 %(D) edge (C)
+					 %(B) edge (C);
+				\end{tikzpicture}	
+			\end{figure}\\
+			\underline{Ans.} of ($ii$)
+			\begin{figure}[h!]
+			\centering	
+			\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(C)                    		{};
+ 					 	\node[vert] 			(A) [above left of=C]            {};
+						\node[vert] 			(D) [above right of=C]            	{};
+						\node[vert] 			(E) [below right of=C]            {};
+ 					 	\node[vert] 			(B) [below left of=C]            {};
+						\node [below right of=B]		{};
+ 				  \path
+					 (A) edge (C)
+			 		 %(A) edge (B)
+					 (D) edge (C)
+					 %(D) edge (E)
+					 (B) edge (C)
+					 (E) edge (C);
+				\end{tikzpicture}
+			\qquad
+			\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(C)                    		{};
+ 					 	\node[vert] 			(A) [above left of=C]            {};
+						\node[vert] 			(D) [above right of=C]            	{};
+						\node[vert] 			(E) [below right of=C]            {};
+ 					 	\node[vert] 			(B) [below left of=C]            {};
+						\node [below right of=B]		{};
+ 				  \path
+					 (A) edge (C)
+			 		 (A) edge (B)
+					 %(D) edge (C)
+					 (D) edge (E)
+					 %(B) edge (C)
+					 (E) edge (C);
+				\end{tikzpicture}
+				\qquad
+				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(C)                    		{};
+ 					 	\node[vert] 			(A) [above left of=C]            {};
+						\node[vert] 			(D) [above right of=C]            	{};
+						\node[vert] 			(E) [below right of=C]            {};
+ 					 	\node[vert] 			(B) [below left of=C]            {};
+						\node [below right of=B]		{};
+ 				  \path
+					 (A) edge (C)
+			 		 (A) edge (B)
+					 (D) edge (C)
+					 (D) edge (E)
+					 %(B) edge (C)
+					 %(E) edge (C);
+				\end{tikzpicture}
+				\qquad
+				\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(C)                    		{};
+ 					 	\node[vert] 			(A) [above left of=C]            {};
+						\node[vert] 			(D) [above right of=C]            	{};
+						\node[vert] 			(E) [below right of=C]            {};
+ 					 	\node[vert] 			(B) [below left of=C]            {};
+						\node [below right of=B]		{};
+ 				  \path
+					 (A) edge (C)
+			 		 (A) edge (B)
+					 (D) edge (C)
+					 %(D) edge (E)
+					 %(B) edge (C)
+					 (E) edge (C);
+				\end{tikzpicture}
+	
+
 			\end{figure}
-			\centering
-	\item {\color{blue} Find the fundamental sets of cycles and cutsets of the graph if the following figure, associated with the spanning tree shown}	
+	\item {\color{blue} Find the fundamental sets of cycles and cutsets of the graph if the following figure, associated with the spanning tree shown}
+					\begin{figure}[h!]
+					\centering
 					\begin{tikzpicture}[scale=.3,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
 						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
 						\node[vert] 		(E)                    		{$e$};
@@ -1286,7 +1424,69 @@ For the graph $K_{3,4,5}$, there is 47 edges.
 							(E) edge (C);
 
 				\end{tikzpicture}	
-	
+				\end{figure}\\
+				\underline{Ans.} 
+				\begin{figure}[h!]
+					\centering
+					\begin{tikzpicture}[scale=.2,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(E)                    		{};
+ 					 	\node[vert] 			(A) [below left=1.5cm of E]            {};
+						\node[vert] 			(D) [below right=1.5cm of E]            	{};
+						\node[vert] 			(C) [below left=1.5cm and 0.4cm of D]            {};
+ 					 	\node[vert] 			(B) [below right=1.5cm and 0.4cm of A]            {};
+				
+						\path
+							(E) edge [red] (A)
+							(E) edge [very thick, blue] (D)
+							(A) edge [very thick, blue] (B)
+							(D) edge [very thick, blue] (C)
+							(B) edge [very thick, blue] (C)
+							%(B) edge [bend right] (C)
+							%(E) edge (B)
+							%(E) edge (C);
+				\end{tikzpicture}
+				\qquad
+				\begin{tikzpicture}[scale=.2,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(E)                    		{};
+ 					 	\node[vert] 			(A) [below left=1.5cm of E]            {};
+						\node[vert] 			(D) [below right=1.5cm of E]            	{};
+						\node[vert] 			(C) [below left=1.5cm and 0.4cm of D]            {};
+ 					 	\node[vert] 			(B) [below right=1.5cm and 0.4cm of A]            {};
+				
+						\path
+							%(E) edge [red] (A)
+							(E) edge [very thick, blue] (D)
+							(A) edge [very thick, blue] (B)
+							(D) edge [very thick, blue] (C)
+							(B) edge [very thick, blue] (C)
+							(B) edge [bend right, red] (C)
+							%(E) edge (B)
+							%(E) edge (C);
+				\end{tikzpicture}
+				\qquad
+				\begin{tikzpicture}[scale=.2,-,>=stealth',shorten >=1pt,auto,node distance=1.5cm, semithick]
+						\tikzstyle{vert}=[draw, circle, inner sep=2pt]
+						\node[vert] 		(E)                    		{};
+ 					 	\node[vert] 			(A) [below left=1.5cm of E]            {};
+						\node[vert] 			(D) [below right=1.5cm of E]            	{};
+						\node[vert] 			(C) [below left=1.5cm and 0.4cm of D]            {};
+ 					 	\node[vert] 			(B) [below right=1.5cm and 0.4cm of A]            {};
+				
+						\path
+							%(E) edge [red] (A)
+							(E) edge [very thick, blue] (D)
+							(A) edge [very thick, blue] (B)
+							(D) edge [very thick, blue] (C)
+							(B) edge [very thick, blue] (C)
+							%(B) edge [bend right, red] (C)
+							%(E) edge [red] (B)
+							(E) edge [red] (C);
+				\end{tikzpicture}
+
+				\end{figure}
+
 	\end{itemize}
 	
 \section*{10: The enumeration of trees}
